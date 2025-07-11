@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $userData = [];
 
             // Step 2: Get user info from correct table
-            if ($usertype === 'student') {
+            if ($usertype === 'Student') {
                 $stmt2 = $conn->prepare("SELECT s.StudID, s.Fname, s.Mname, s.Lname, s.AccID, ua.Email, ua.Password, ys.YearLevel AS Grade, ys.SectionName AS Section
                          FROM Student s
                          Inner JOIN User_Account ua ON s.AccID = ua.AccID
@@ -131,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $stmt2->execute();
                 $res2 = $stmt2->get_result();
                 $userData = $res2->fetch_assoc();
-                $userData['UserType'] = 'student';
+                $userData['UserType'] = 'Student';
             } 
             elseif ($usertype === 'Admin') {
                 $stmt2 = $conn->prepare("SELECT a.AdminID, a.Fname, a.Mname, a.Lname, a.AccID, ua.Email, ua.Password
@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $stmt2->execute();
                         $res2 = $stmt2->get_result();
                         $userData = $res2->fetch_assoc();
-                        $userData['UserType'] = 'admin';
+                        $userData['UserType'] = 'Admin';
             } 
             elseif ($usertype === 'teacher') {
                $stmt2 = $conn->prepare("SELECT t.TeacherID, t.Fname, t.Mname, t.Lname, t.AccID, ua.Email, ua.Password
@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $stmt2->execute();
                 $res2 = $stmt2->get_result();
                 $userData = $res2->fetch_assoc();
-                $userData['UserType'] = 'teacher';
+                $userData['UserType'] = 'Teacher';
 
             } 
             elseif ($usertype === 'principal') {
