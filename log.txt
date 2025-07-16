@@ -1,0 +1,391 @@
+{
+    "action": "updateStudent",
+    "studid": "s2020-20000202",
+    "fname": "mmaria",
+    "mname": "leonora",
+    "lname": "teresa",
+    "grade": "8",
+    "section": "St. Agnes",
+    "phone": 9676039132,
+    "email": "ryzen1520@gmail.com",
+    "accid": 6,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2020-20000202",
+    "fname": "aaria",
+    "mname": "leonora",
+    "lname": "teresa",
+    "grade": "8",
+    "section": "St. Agnes",
+    "phone": 9676039132,
+    "email": "ryzen1520@gmail.com",
+    "accid": 6,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2020-20000202",
+    "fname": "mmaria",
+    "mname": "leonora",
+    "lname": "teresa",
+    "grade": "8",
+    "section": "St. Agnes",
+    "phone": 9676039132,
+    "email": "ryzen1520@gmail.com",
+    "accid": 6,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2020-20000202",
+    "fname": "maria",
+    "mname": "leonora",
+    "lname": "teresa",
+    "grade": "8",
+    "section": "St. Agnes",
+    "phone": 9676039132,
+    "email": "ryzen1520@gmail.com",
+    "accid": 6,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2020-20000202",
+    "fname": "maria",
+    "mname": "leonora",
+    "lname": "teresa",
+    "grade": "8",
+    "section": "St. Agnes",
+    "phone": 9676039132,
+    "email": "ryzen1520@gmail.com",
+    "accid": 6,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2020-20000202",
+    "fname": "maria",
+    "mname": "leonora",
+    "lname": "teresa",
+    "grade": "8",
+    "section": "St. Agnes",
+    "phone": 9676039132,
+    "email": "ryzen1520@gmail.com",
+    "accid": 6,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2020-20000202",
+    "fname": "mmaaria",
+    "mname": "leonora",
+    "lname": "teresa",
+    "grade": "8",
+    "section": "St. Agnes",
+    "phone": 9676039132,
+    "email": "ryzen1520@gmail.com",
+    "accid": 6,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2025-20025",
+    "fname": "harry",
+    "mname": "sad",
+    "lname": "cabang",
+    "grade": "7",
+    "section": "St. Peter",
+    "phone": 9676039132,
+    "email": "shawnbulos03@gmail.com",
+    "accid": 1,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2025-2002523",
+    "fname": "Raizen",
+    "mname": "Rei",
+    "lname": "Bulos",
+    "grade": "7",
+    "section": "St. Paul",
+    "phone": 9676039132,
+    "email": "shawnbulos03@gmail.com",
+    "accid": 4,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2020-20000202",
+    "fname": "maaria",
+    "mname": "leonora",
+    "lname": "teresa",
+    "grade": "8",
+    "section": "St. Agnes",
+    "phone": 9676039132,
+    "email": "ryzen1520@gmail.com",
+    "accid": 6,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2025-20025asd",
+    "fname": "harry",
+    "mname": "sasd",
+    "lname": "sad",
+    "grade": "8",
+    "section": "St. John",
+    "phone": 9676039132,
+    "email": "buloss012@gmail.com",
+    "accid": 5,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2025-2002512",
+    "fname": "Shawn",
+    "mname": "michael",
+    "lname": "Bulos",
+    "grade": "10",
+    "section": "St. Veronica",
+    "phone": 9676039132,
+    "email": "Ryzen123@gmail.com",
+    "accid": 24,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2020-20000202",
+    "fname": "maria",
+    "mname": "leonora",
+    "lname": "teresa",
+    "grade": "8",
+    "section": "St. Agnes",
+    "phone": 9676039132,
+    "email": "ryzen1520@gmail.com",
+    "accid": 6,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2025-20025",
+    "fname": "harry",
+    "mname": "sad",
+    "lname": "cabangg",
+    "grade": "7",
+    "section": "St. Peter",
+    "phone": 9676039132,
+    "email": "shawnbulos03@gmail.com",
+    "accid": 1,
+    "password": "Raizen092103"
+}
+{
+    "action": "updateStudent",
+    "studid": "s2025-20025",
+    "fname": "harry",
+    "mname": "sad",
+    "lname": "cabang",
+    "grade": "7",
+    "section": "St. Peter",
+    "phone": 9676039132,
+    "email": "shawnbulos03@gmail.com",
+    "accid": 1,
+    "password": "Raizen092103"
+}
+{
+    "action": "createSchedule",
+    "schedule": {
+        "title": "MidYEar",
+        "questionaireID": "1",
+        "startDate": "2025-08-09",
+        "endDate": "2025-08-09",
+        "status": "Active",
+        "targetGrades": [
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10"
+        ],
+        "schoolYear": "2025",
+        "adminID": 1
+    }
+}
+{
+    "action": "createSchedule",
+    "schedule": {
+        "title": "MidYEar",
+        "questionaireID": "1",
+        "startDate": "2025-08-09",
+        "endDate": "2025-08-09",
+        "status": "Active",
+        "targetGrades": [
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10"
+        ],
+        "schoolYear": "2025",
+        "adminID": 1
+    }
+}
+{
+    "action": "createSchedule",
+    "schedule": {
+        "title": "MidYEar",
+        "questionaireID": "1",
+        "startDate": "2025-08-09",
+        "endDate": "2025-08-09",
+        "status": "Active",
+        "targetGrades": [
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10",
+            "Grade 10",
+            "Grade 9",
+            "Grade 8",
+            "Grade 7"
+        ],
+        "schoolYear": "2025",
+        "adminID": 1
+    }
+}
+{
+    "action": "createSchedule",
+    "schedule": {
+        "title": "MidYEar",
+        "questionaireID": "1",
+        "startDate": "2025-08-09",
+        "endDate": "2025-08-09",
+        "status": "Active",
+        "targetGrades": [
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10",
+            "Grade 10",
+            "Grade 9",
+            "Grade 8",
+            "Grade 7"
+        ],
+        "schoolYear": "2025",
+        "adminID": 1
+    }
+}
+{
+    "action": "createSchedule",
+    "schedule": {
+        "title": "miyear",
+        "questionaireID": "1",
+        "startDate": "2025-07-01",
+        "endDate": "2025-08-01",
+        "status": "Active",
+        "targetGrades": [
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10"
+        ],
+        "schoolYear": "2025",
+        "adminID": 1
+    }
+}
+{
+    "action": "createSchedule",
+    "schedule": {
+        "title": "miyear",
+        "questionaireID": "1",
+        "startDate": "2025-07-01",
+        "endDate": "2025-08-01",
+        "status": "Active",
+        "targetGrades": [
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10"
+        ],
+        "schoolYear": "2025",
+        "adminID": 1
+    }
+}
+{
+    "action": "createSchedule",
+    "schedule": {
+        "title": "ito na ",
+        "questionaireID": "1",
+        "startDate": "2025-08-02",
+        "endDate": "2025-08-09",
+        "status": "Active",
+        "targetGrades": [
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10"
+        ],
+        "schoolYear": "2025",
+        "adminID": 1
+    }
+}
+{
+    "action": "createSchedule",
+    "schedule": {
+        "title": "ito na ",
+        "questionaireID": "1",
+        "startDate": "2025-08-02",
+        "endDate": "2025-08-09",
+        "status": "Active",
+        "targetGrades": [
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10"
+        ],
+        "schoolYear": "2025",
+        "adminID": 1
+    }
+}
+{
+    "action": "createSchedule",
+    "schedule": {
+        "title": "ito na ",
+        "questionaireID": "1",
+        "startDate": "2025-08-02",
+        "endDate": "2025-08-09",
+        "status": "Active",
+        "targetGrades": [
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10",
+            "Grade 10",
+            "Grade 9",
+            "Grade 8",
+            "Grade 7"
+        ],
+        "schoolYear": "2025",
+        "adminID": 1
+    }
+}
+{
+    "action": "createSchedule",
+    "schedule": {
+        "title": "ito na ",
+        "questionaireID": "1",
+        "startDate": "2025-08-02",
+        "endDate": "2025-08-09",
+        "status": "Active",
+        "targetGrades": [
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10",
+            "Grade 10",
+            "Grade 9",
+            "Grade 8",
+            "Grade 7"
+        ],
+        "schoolYear": "2025",
+        "adminID": 1
+    }
+}
