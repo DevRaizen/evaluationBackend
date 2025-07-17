@@ -49,5 +49,61 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         exit();
     } 
+
+     if (isset($data['action']) && $data['action'] === 'getEvaluationSettings') {
+
+        $stmt = $conn->prepare( "SELECT * FROM Evaluation_Settings ORDER BY StartDate DESC");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $results = [];
+
+         while($row = $result->fetch_assoc()){
+            $results[] = $row;
+        }
+
+         echo json_encode([
+        'status' => 'success',
+        'evalsettings' => $results
+    ]);
+    exit();   
+    }
+
+    if (isset($data['action']) && $data['action'] === 'updateEvaluationSettings') {
+        $schedule = $data['schedule'];
+        $id = (int)$schedule['id'];
+        $title = trim($schedule['title']);
+        $startDate = trim($schedule['startDate']);
+        $endDate = trim($schedule['endDate']);
+
+        if ($id && $title !== '' && $startDate !== '' && $endDate !== '') {
+        $stmt = $conn->prepare("UPDATE Evaluation_Settings  SET Title = ?, StartDate = ?, EndDate = ?
+                                 WHERE ESetID = ?");
+        $stmt->bind_param("sssi", $title, $startDate, $endDate, $id);
+        if ($stmt->execute()) {
+            echo json_encode(['status' => 'success']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => $stmt->error]);
+        }
+    } else {
+        echo json_encode(['status' => 'invalid', 'message' => 'Missing fields']);
+    }
+    exit();
+    }
+
+    if (isset($data['action']) && $data['action'] === 'deleteEvaluationSetting') {
+    $id = intval($data['id']);
+
+    $stmt = $conn->prepare("DELETE FROM Evaluation_Settings WHERE ESetID = ?");
+    $stmt->bind_param("i", $id);
+
+    if ($stmt->execute()) {
+        echo json_encode(['status' => 'success', 'message' => 'Deleted successfully']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => $stmt->error]);
+    }
+
+    exit();
+    }
+
 }
 ?>
