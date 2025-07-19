@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $userData = $res2->fetch_assoc();
                         $userData['UserType'] = 'Admin';
             } 
-            elseif ($usertype === 'teacher') {
+            elseif ($usertype === 'Teacher') {
                $stmt2 = $conn->prepare("SELECT t.TeacherID, t.Fname, t.Mname, t.Lname, t.AccID, ua.Email, ua.Password
                          FROM Teacher t
                          JOIN User_Account ua ON t.AccID = ua.AccID

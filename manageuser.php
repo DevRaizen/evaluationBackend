@@ -203,12 +203,12 @@ if ($data['action'] === 'updateAdmin') {
 
 if(isset($data['action']) && $data['action'] === 'getUserAccount') {
        
-        $stmt = $conn->prepare("SELECT s.studid AS ID, s.fname AS Fname,s.mname AS Mname,s.lname AS Lname, s.yearsecid as YearSec, ua.accid, ua.email, CASE ua.status 
+        $stmt = $conn->prepare("SELECT s.studid AS ID, s.fname AS Fname,s.mname AS Mname,s.lname AS Lname, s.yearsecid as YearSec, s.image as image, ua.accid, ua.email, CASE ua.status 
         WHEN 1 THEN 'Active' ELSE 'Inactive' END AS status,'Student' AS role
         FROM student s
         INNER JOIN user_account ua ON s.accid = ua.accid
         UNION ALL
-        SELECT t.teacherid AS ID, t.fname AS Fname, t.mname AS Mname, t.lname AS Lname, null as YearSec, ua.accid, ua.email,CASE ua.status 
+        SELECT t.teacherid AS ID, t.fname AS Fname, t.mname AS Mname, t.lname AS Lname, null as YearSec, t.image as image, ua.accid, ua.email,CASE ua.status 
         WHEN 1 THEN 'Active' ELSE 'Inactive' END AS status, 'Teacher' AS role
         FROM teacher t
         INNER JOIN user_account ua ON t.accid = ua.accid;

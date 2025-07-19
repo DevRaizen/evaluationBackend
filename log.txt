@@ -389,3 +389,16 @@
         "adminID": 1
     }
 }
+{
+    "action": "updateStudent",
+    "studid": "s2020-20000202",
+    "fname": "Maria1",
+    "mname": "leonora",
+    "lname": "teresa",
+    "grade": "8",
+    "section": "St. Agnes",
+    "phone": 9676039132,
+    "email": "ryzen1520@gmail.com",
+    "accid": 6,
+    "password": "Raizen092103"
+}
