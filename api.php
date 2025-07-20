@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $yearSecID = $conn->insert_id;
         }
 
-        $stmt = $conn->prepare("INSERT INTO User_Account (Email, Password, UserType) VALUES (?, ?, 'student')");
+        $stmt = $conn->prepare("INSERT INTO User_Account (Email, Password, UserType) VALUES (?, ?, 'Student')");
         $stmt->bind_param("ss", $email, $hashedPassword);
         $stmt->execute();
         $accID = $conn->insert_id;
