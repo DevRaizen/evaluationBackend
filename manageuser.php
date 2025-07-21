@@ -10,7 +10,21 @@ header('Content-Type: application/json');
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-include 'db.php'; // Include database connection
+
+include 'db.php';
+function getCurrentSchoolYear(): string {
+    $month = date('n');
+    if ($month >= 6) {
+        $start = date('Y');
+        $end = $start + 1;
+    } else {
+        $end = date('Y');
+        $start = $end - 1;
+    }
+    return $start . '-' . $end;
+}
+
+ // Include database connection
 $data = json_decode(file_get_contents("php://input"), true);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -117,27 +131,55 @@ if (isset($data['action']) && $data['action'] === 'updateStudent') {
     $yearsecid = $row['yearsecid'];
 
     // Update student
-    $stmt2 = $conn->prepare("UPDATE student SET studid = ?, fname = ?, mname = ?, lname = ?, yearSecID = ? WHERE accid = ?");
-    $stmt2->bind_param("ssssii", $studid, $fname, $mname, $lname, $yearsecid, $accid);
+    $stmt2 = $conn->prepare("UPDATE student SET studid = ?, fname = ?, mname = ?, lname = ? WHERE accid = ?");
+    $stmt2->bind_param("ssssi", $studid, $fname, $mname, $lname, $accid);
 
     // Execute both statements
-   $stmt1_result = $stmt1->execute();
+     $stmt1_result = $stmt1->execute();
     $stmt2_result = $stmt2->execute();
 
-if ($stmt1_result && $stmt2_result) {
-    echo json_encode(['status' => 'success', 'message' => 'Student updated successfully']);
-} else {
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'Failed to update student',
-        'stmt1_error' => $stmt1->error,
-        'stmt2_error' => $stmt2->error
-    ]);
-}
+    $schoolYear = getCurrentSchoolYear();
 
+    $checkEnroll = $conn->prepare("SELECT EnrollmentID FROM Enrollment WHERE StudID = ? AND SchoolYear = ?");
+    $checkEnroll->bind_param("ss", $studid, $schoolYear);
+    $checkEnroll->execute();
+    $checkEnrollResult = $checkEnroll->get_result();
+
+    if ($checkEnrollResult->num_rows > 0) {
+        // Update enrollment
+        $enrollmentRow = $checkEnrollResult->fetch_assoc();
+        $enrollmentID = $enrollmentRow['EnrollmentID'];
+
+        $updateEnroll = $conn->prepare("UPDATE Enrollment SET yearsecid = ? WHERE EnrollmentID = ?");
+        $updateEnroll->bind_param("ii", $yearsecid, $enrollmentID);
+        $enrollmentResult = $updateEnroll->execute();
+        $updateEnroll->close();
+    } else {
+        // Insert enrollment
+        $insertEnroll = $conn->prepare("INSERT INTO Enrollment (StudID, YearSecID, SchoolYear) VALUES (?, ?, ?)");
+        $insertEnroll->bind_param("sis", $studid, $yearsecid, $schoolYear);
+        $enrollmentResult = $insertEnroll->execute();
+        $insertEnroll->close();
+    }
+
+
+
+ if ($stmt1_result && $stmt2_result && $enrollmentResult) {
+        echo json_encode(['status' => 'success', 'message' => 'Student updated successfully']);
+    } else {
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Failed to update student or enrollment',
+            'stmt1_error' => $stmt1->error,
+            'stmt2_error' => $stmt2->error,
+            'enroll_error' => $conn->error
+        ]);
+    }
 
     $stmt1->close();
     $stmt2->close();
+    $stmt->close();
+    $checkEnroll->close();
     exit();
 }
 
@@ -202,18 +244,46 @@ if ($data['action'] === 'updateAdmin') {
 }
 
 if(isset($data['action']) && $data['action'] === 'getUserAccount') {
-       
-        $stmt = $conn->prepare("SELECT s.studid AS ID, s.fname AS Fname,s.mname AS Mname,s.lname AS Lname, s.yearsecid as YearSec, s.image as image, ua.accid, ua.email, CASE ua.status 
-        WHEN 1 THEN 'Active' ELSE 'Inactive' END AS status,'Student' AS role
-        FROM student s
-        INNER JOIN user_account ua ON s.accid = ua.accid
-        UNION ALL
-        SELECT t.teacherid AS ID, t.fname AS Fname, t.mname AS Mname, t.lname AS Lname, null as YearSec, t.image as image, ua.accid, ua.email,CASE ua.status 
-        WHEN 1 THEN 'Active' ELSE 'Inactive' END AS status, 'Teacher' AS role
-        FROM teacher t
-        INNER JOIN user_account ua ON t.accid = ua.accid;
-        ");
-                
+
+       $stmt = $conn->prepare("
+                            SELECT 
+                                s.studid AS ID,
+                                s.fname AS Fname,
+                                s.mname AS Mname,
+                                s.lname AS Lname,
+                                ys.YearLevel AS Grade,
+                                ys.yearsecid as YearSec,
+                                ys.SectionName AS Section,
+                                s.image AS image,
+                                ua.accid,
+                                ua.email,
+                                CASE ua.status WHEN 1 THEN 'Active' ELSE 'Inactive' END AS status,
+                                'Student' AS role
+                            FROM student s
+                            INNER JOIN user_account ua ON s.accid = ua.accid
+                            INNER JOIN enrollment e ON s.studid = e.studid
+                            INNER JOIN year_section ys ON e.yearsecid = ys.yearsecid
+                            WHERE e.SchoolYear = (SELECT MAX(SchoolYear) FROM enrollment WHERE studid = s.studid)
+
+                            UNION ALL
+
+                            SELECT 
+                                t.teacherid AS ID,
+                                t.fname AS Fname,
+                                t.mname AS Mname,
+                                t.lname AS Lname,
+                                Null AS YearSec,
+                                NULL AS Grade,
+                                NULL AS Section,
+                                t.image AS image,
+                                ua.accid,
+                                ua.email,
+                                CASE ua.status WHEN 1 THEN 'Active' ELSE 'Inactive' END AS status,
+                                'Teacher' AS role
+                            FROM teacher t
+                            INNER JOIN user_account ua ON t.accid = ua.accid
+                        ");
+  
         $stmt->execute();
         $result = $stmt->get_result();
         $results = [];

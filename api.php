@@ -7,7 +7,21 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
+
 include 'db.php'; // Include database connection
+function getCurrentSchoolYear(): string {
+    $month = date('n');
+    if ($month >= 6) {
+        $start = date('Y');
+        $end = $start + 1;
+    } else {
+        $end = date('Y');
+        $start = $end - 1;
+    }
+    return $start . '-' . $end;
+}
+
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = json_decode(file_get_contents("php://input"), true);
@@ -75,16 +89,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute();
         $accID = $conn->insert_id;
         
-        $stmt2 = $conn->prepare("INSERT INTO Student (StudID, AccID, YearSecID, Fname, Mname, Lname) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt2->bind_param("siisss", $StudId, $accID, $yearSecID, $fname, $mname, $lname);
+        $stmt2 = $conn->prepare("INSERT INTO Student (StudID, AccID,  Fname, Mname, Lname) VALUES (?, ?, ?, ?, ?)");
+        $stmt2->bind_param("sisss", $StudId, $accID, $fname, $mname, $lname);
         $success = $stmt2->execute();
 
         if ($success) {
-        echo json_encode(["status" => "success", "message" => "Student registered successfully."]);
+        
+            $schoolYear = getCurrentSchoolYear();
+
+            $enrollStmt = $conn->prepare("INSERT INTO Enrollment (StudID, YearSecID, SchoolYear) VALUES (?, ?, ?)");
+            $enrollStmt->bind_param("sis", $StudId, $yearSecID, $schoolYear);
+            $success2 = $enrollStmt->execute();
+
+            if ($success2) {
+                echo json_encode(["status" => "success", "message" => "Student registered and enrolled successfully."]);
+            } else {
+                echo json_encode(["status" => "error", "message" => "Student registered, but enrollment failed."]);
+            }
         } else {
             echo json_encode(["status" => "error", "message" => "Failed to insert into Student table."]);
         }
+
+    exit(); 
     }
+
     // Login User
     elseif (isset($data['action']) && $data['action'] == 'login') {
     $email = $data['email'] ?? '';
@@ -99,7 +127,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
   
-
     // Step 1: Check user from User_Account
     $stmt = $conn->prepare("SELECT * FROM User_Account WHERE Email = ?");
     $stmt->bind_param("s", $email);
@@ -122,11 +149,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Step 2: Get user info from correct table
             if ($usertype === 'Student') {
-                $stmt2 = $conn->prepare("SELECT s.StudID, s.Fname, s.Mname, s.Lname, s.AccID, ua.Email, ua.Password, ys.YearLevel AS Grade, ys.SectionName AS Section
-                         FROM Student s
-                         Inner JOIN User_Account ua ON s.AccID = ua.AccID
-                         Inner JOIN Year_Section ys ON s.YearSecID = ys.YearSecID
-                         WHERE s.AccID = ?");
+                $stmt2 = $conn->prepare("
+                                        SELECT 
+                                            s.StudID, s.Fname, s.Mname, s.Lname, s.AccID,
+                                            ua.Email, ua.Password,
+                                            ys.YearLevel AS Grade, ys.SectionName AS Section,
+                                            e.SchoolYear
+                                        FROM Student s
+                                        INNER JOIN User_Account ua ON s.AccID = ua.AccID
+                                        INNER JOIN Enrollment e ON s.StudID = e.StudID
+                                        INNER JOIN Year_Section ys ON e.YearSecID = ys.YearSecID
+                                        WHERE s.AccID = ?
+                                        ORDER BY e.SchoolYear DESC
+                                        LIMIT 1
+                                    ");
                 $stmt2->bind_param("i", $accID);
                 $stmt2->execute();
                 $res2 = $stmt2->get_result();
