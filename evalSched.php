@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
      if (isset($data['action']) && $data['action'] === 'getEvaluationSettings') {
 
-        $stmt = $conn->prepare( "SELECT * FROM Evaluation_Settings ORDER BY StartDate DESC");
+        $stmt = $conn->prepare( "SELECT * FROM Evaluation_Settings Where Status = 'Active' ORDER BY StartDate DESC");
         $stmt->execute();
         $result = $stmt->get_result();
         $results = [];

@@ -38,8 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             $updateStmt = $pdo->prepare("UPDATE teacher SET image = ? WHERE TeacherID = ?");
         } else if ($userRole === 'Student') {
             $baseDir = 'StudentProfile/' . $safeId . '/';
-            $selectStmt = $pdo->prepare("SELECT image FROM student WHERE StudentID = ?");
-            $updateStmt = $pdo->prepare("UPDATE student SET image = ? WHERE StudentID = ?");
+            $selectStmt = $pdo->prepare("SELECT image FROM student WHERE StudID = ?");
+            $updateStmt = $pdo->prepare("UPDATE student SET image = ? WHERE StudID = ?");
         } else {
             http_response_code(200);
             echo json_encode(['status' => 'error', 'message' => 'Invalid user role']);
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($userRole === 'Teacher') {
             $stmt = $pdo->prepare("SELECT image FROM teacher WHERE TeacherID = ?");
         } else if ($userRole === 'Student') {
-            $stmt = $pdo->prepare("SELECT image FROM student WHERE StudentID = ?");
+            $stmt = $pdo->prepare("SELECT image FROM student WHERE StudID = ?");
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Invalid role']);
             exit;
