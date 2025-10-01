@@ -92,7 +92,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         if ($res->num_rows > 0) {
             echo json_encode([
                 'status' => 'error',
-                'message' => "Section '$section' is already assigned to another teacher for this subject."
+                'message' => "Section '$section' is already assigned to You for this subject."
             ]);
             exit();
         }

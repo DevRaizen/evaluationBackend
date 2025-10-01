@@ -35,17 +35,23 @@ if ($action === 'getQuestionsByQID') {
         $questions[] = $row;
     }
 
-    echo json_encode($questions);
+    echo json_encode([
+    'status' => 'success',
+    'questions' => $questions
+]);
 }
 
 if ($action === 'getAllQIDs') {
-    $stmt = $conn->prepare("SELECT DISTINCT QID FROM questionnaire");
+    $stmt = $conn->prepare("SELECT DISTINCT QID FROM questionnaire  ");
     $stmt->execute();
     $result = $stmt->get_result();
 
     $qids = [];
     while ($row = $result->fetch_assoc()) {
-        $qids[] = $row['QID'];
+        $qids[] = [
+            'QID' => $row['QID'],
+
+        ];
     }
 
     echo json_encode($qids);
@@ -172,7 +178,6 @@ if ($action === 'addSingleQuestion') {
     echo json_encode(['status' => 'success', 'QID' => $qid, 'QuesID' => $quesID]);
 }
 
-
 if ($action === 'addCategory') {
     $categoryName = trim($data['categoryName']);
 
@@ -199,7 +204,6 @@ if ($action === 'addCategory') {
     }
 }
 
-
 if ($action === 'deleteCategory') {
     $catID = $data['catID'];
 
@@ -225,6 +229,22 @@ if ($action === 'deleteCategory') {
     }
 }
 
+if ($action === 'updateCategory') {
+    $catID = $data['catID'];
+    $categoryName = trim($data['categoryName']);
+
+    if ($catID && $categoryName !== '') {
+        $stmt = $conn->prepare("UPDATE category SET categoryName = ? WHERE catID = ?");
+        $stmt->bind_param("si", $categoryName, $catID);
+        if ($stmt->execute()) {
+            echo json_encode(['status' => 'success']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Update failed']);
+        }
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Invalid input']);
+    }
+}
 
 if ($action === 'updateCategory') {
     $catID = $data['catID'];
@@ -243,5 +263,61 @@ if ($action === 'updateCategory') {
     }
 }
 
+if ($action === 'updateQuestionaireCategory') {
+    $qid = $data['QID'];
+    $categoryName = trim($data['categoryName']);
+
+    if ($qid && $categoryName !== '') {
+        $stmt = $conn->prepare("SELECT catID FROM category WHERE categoryName = ?");
+        $stmt->bind_param("s", $categoryName);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($row = $result->fetch_assoc()) {
+            $catID = $row['catID'];
+
+            $stmt = $conn->prepare("UPDATE questionnaire SET catID = ? WHERE QID = ?");
+            $stmt->bind_param("ii", $catID, $qid);
+
+            if ($stmt->execute()) {
+                echo json_encode(['status' => 'success']);
+            } else {
+                echo json_encode(['status' => 'error', 'message' => 'Update failed']);
+            }
+        } else {
+            // Di makita 
+            echo json_encode(['status' => 'error', 'message' => 'Category not found']);
+        }
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Invalid input']);
+    }
+}
+
+// student part
+
+if ($action === 'getStudentQuestionsByQID') {
+    $qid = $data['QID'];
+    $stmt = $conn->prepare("
+        SELECT q.QuesID, q.questionText, q.type, c.categoryName, c.catID
+        FROM questionnaire qa
+        JOIN question q ON qa.QuesID = q.QuesID
+        JOIN category c ON q.catID = c.catID
+        WHERE qa.QID = ?
+        ORDER BY c.categoryName, q.QuesID
+    "); 
+    $stmt->bind_param("i",$qid);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $questions = [];
+    while ($row = $result->fetch_assoc()) {
+        $questions[] = $row;
+    }
+
+    echo json_encode([
+    'status' => 'success',
+    'questions' => $questions
+]);
+}
 
 ?>

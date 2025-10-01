@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents("php://input"), true);
 
     if (isset($data['action']) && $data['action'] === 'createSchedule') {
+
         $schedule = $data['schedule'];
 
         $title = trim($schedule['title']);
@@ -28,15 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $schoolYear = trim($schedule['schoolYear']);
         $adminID = (int)$schedule['adminID'];
         $QID = (int)$schedule['questionnaireID']; 
-       
+
 
         $targetGradeStr = implode(', ', $targetGrades);
 
+       
         // Validate required fields
         if ($title !== '' && $startDate !== '' && $endDate !== '' && !empty($targetGrades)) {
             $stmt = $conn->prepare("INSERT INTO Evaluation_Settings (Title, StartDate, EndDate, Status, TargetGrade, SchoolYear, AdminID, QID)
                                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssssii", $title, $startDate, $endDate, $status,$targetGradeStr, $schoolYear, $adminID, $QID );
+            $stmt->bind_param("ssssssii", $title, $startDate, $endDate, $status,$targetGradeStr, $schoolYear, $adminID, $QID);
 
             if ($stmt->execute()) {
         
@@ -53,6 +55,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      if (isset($data['action']) && $data['action'] === 'getEvaluationSettings') {
 
         $stmt = $conn->prepare( "SELECT * FROM Evaluation_Settings Where Status = 'Active' ORDER BY StartDate DESC");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $results = [];
+
+         while($row = $result->fetch_assoc()){
+            $results[] = $row;
+        }
+
+         echo json_encode([
+        'status' => 'success',
+        'evalsettings' => $results
+    ]);
+    exit();   
+    }
+
+    if (isset($data['action']) && $data['action'] === 'getEvaluationAllSettings') {
+
+        $stmt = $conn->prepare( "SELECT * FROM Evaluation_Settings  ORDER BY StartDate DESC");
         $stmt->execute();
         $result = $stmt->get_result();
         $results = [];
