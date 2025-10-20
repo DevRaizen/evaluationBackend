@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $teacherID  = $data['TeacherID'];
     $subjectID  = $data['SubjectID'];
     $eSetID     = $data['ESetID'];
-    $schoolYear = $data['SchoolYear'];
+    $schoolYearID = $data['SchoolYearID'];
     $answers    = $data['answers'];          // now a nested array
     $optional   = $data['Optionalanswers'];  // if you need it
 
@@ -45,10 +45,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     try {
         // 1. Create evaluation record
         $stmt = $conn->prepare("
-            INSERT INTO evaluation (ESetID, TeacherID, StudID, SubjectID, SchoolYear, EvalDate)
+            INSERT INTO evaluation (ESetID, TeacherID, StudID, SubjectID, SchoolYearID, EvalDate)
             VALUES (?, ?, ?, ?, ?, NOW())
         ");
-        $stmt->bind_param("issss", $eSetID, $teacherID, $studID, $subjectID, $schoolYear);
+        $stmt->bind_param("isssi", $eSetID, $teacherID, $studID, $subjectID, $schoolYearID);
         $stmt->execute();
         $evalID = $stmt->insert_id;
         $stmt->close();

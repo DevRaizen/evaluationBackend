@@ -16,6 +16,16 @@ try {
     exit;
 }
 
+$today = date('Y-m-d H:i:s'); // current datetime
+$updateSql = "UPDATE evaluation_settings
+              SET status = 'Inactive'
+              WHERE status = 'Active' AND endDate < ?";
+$stmt = $pdo->prepare($updateSql);
+$stmt->execute([$today]);
+
+
+$updatedRows = $stmt->rowCount();
+
 /*
 $query = "SELECT AccID, Password FROM User_Account";
 $result = $conn->query($query);

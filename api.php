@@ -67,51 +67,60 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     // Register
     if (isset($data['action']) && $data['action'] == 'register') {
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-        $stmt = $conn->prepare("SELECT YearSecID FROM Year_Section WHERE YearLevel = ? AND SectionName = ?");
-        $stmt->bind_param("ss", $grade, $section);
-        $stmt->execute();
-        $result = $stmt->get_result();
+    // 1️⃣ Get YearSecID
+    $stmt = $conn->prepare("SELECT YearSecID FROM Year_Section WHERE YearLevel = ? AND SectionName = ?");
+    $stmt->bind_param("ss", $grade, $section);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        if ($result->num_rows > 0) {
+    if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $yearSecID = $row['YearSecID'];
-        }else {
-            $insertYearSec = $conn->prepare("INSERT INTO Year_Section (YearLevel, SectionName) VALUES (?, ?)");
-            $insertYearSec->bind_param("ss", $grade, $section);
-            $insertYearSec->execute();
-            $yearSecID = $conn->insert_id;
-        }
+    } else {
+        $insertYearSec = $conn->prepare("INSERT INTO Year_Section (YearLevel, SectionName) VALUES (?, ?)");
+        $insertYearSec->bind_param("ss", $grade, $section);
+        $insertYearSec->execute();
+        $yearSecID = $conn->insert_id;
+    }
 
-        $stmt = $conn->prepare("INSERT INTO User_Account (Email, Password, UserType) VALUES (?, ?, 'Student')");
-        $stmt->bind_param("ss", $email, $hashedPassword);
-        $stmt->execute();
-        $accID = $conn->insert_id;
-        
-        $stmt2 = $conn->prepare("INSERT INTO Student (StudID, AccID,  Fname, Mname, Lname) VALUES (?, ?, ?, ?, ?)");
-        $stmt2->bind_param("sisss", $StudId, $accID, $fname, $mname, $lname);
-        $success = $stmt2->execute();
+    // 2️⃣ Insert into User_Account
+    $stmt = $conn->prepare("INSERT INTO User_Account (Email, Password, UserType) VALUES (?, ?, 'Student')");
+    $stmt->bind_param("ss", $email, $hashedPassword);
+    $stmt->execute();
+    $accID = $conn->insert_id;
 
-        if ($success) {
-        
-            $schoolYear = getCurrentSchoolYear();
+    // 3️⃣ Insert into Student table
+    $stmt2 = $conn->prepare("INSERT INTO Student (StudID, AccID, Fname, Mname, Lname) VALUES (?, ?, ?, ?, ?)");
+    $stmt2->bind_param("sisss", $StudId, $accID, $fname, $mname, $lname);
+    $success = $stmt2->execute();
 
-            $enrollStmt = $conn->prepare("INSERT INTO Enrollment (StudID, YearSecID, SchoolYear) VALUES (?, ?, ?)");
-            $enrollStmt->bind_param("sis", $StudId, $yearSecID, $schoolYear);
-            $success2 = $enrollStmt->execute();
+    if ($success) {
+        // 4️⃣ Get active SchoolYearID from schoolyear table
+        $schoolYearStmt = $conn->prepare("SELECT SchoolYearID FROM schoolyear WHERE Status = 'Active' LIMIT 1");
+        $schoolYearStmt->execute();
+        $schoolYearResult = $schoolYearStmt->get_result();
+        $schoolYearRow = $schoolYearResult->fetch_assoc();
+        $schoolYearID = $schoolYearRow['SchoolYearID'] ?? 1; // fallback to 1 if not found
 
-            if ($success2) {
-                echo json_encode(["status" => "success", "message" => "Student registered and enrolled successfully."]);
-            } else {
-                echo json_encode(["status" => "error", "message" => "Student registered, but enrollment failed."]);
-            }
+        // 5️⃣ Insert into Enrollment table with SchoolYearID
+        $enrollStmt = $conn->prepare("INSERT INTO Enrollment (StudID, YearSecID, SchoolYearID) VALUES (?, ?, ?)");
+        $enrollStmt->bind_param("sii", $StudId, $yearSecID, $schoolYearID);
+        $success2 = $enrollStmt->execute();
+
+        if ($success2) {
+            echo json_encode(["status" => "success", "message" => "Student registered and enrolled successfully."]);
         } else {
-            echo json_encode(["status" => "error", "message" => "Failed to insert into Student table."]);
+            echo json_encode(["status" => "error", "message" => "Student registered, but enrollment failed."]);
         }
+    } else {
+        echo json_encode(["status" => "error", "message" => "Failed to insert into Student table."]);
+    }
 
     exit(); 
-    }
+}
+
 
     // Login User
     elseif (isset($data['action']) && $data['action'] == 'login') {
@@ -150,18 +159,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Step 2: Get user info from correct table
             if ($usertype === 'Student') {
                 $stmt2 = $conn->prepare("
-                                        SELECT 
-                                            s.StudID, s.Fname, s.Mname, s.Lname, s.AccID,
-                                            ua.Email, ua.Password,
-                                            ys.YearLevel AS Grade, ys.SectionName AS Section,
-                                            e.SchoolYear
-                                        FROM Student s
-                                        INNER JOIN User_Account ua ON s.AccID = ua.AccID
-                                        INNER JOIN Enrollment e ON s.StudID = e.StudID
-                                        INNER JOIN Year_Section ys ON e.YearSecID = ys.YearSecID
-                                        WHERE s.AccID = ?
-                                        ORDER BY e.SchoolYear DESC
-                                        LIMIT 1
+                                       SELECT 
+                                        s.StudID, s.Fname, s.Mname, s.Lname, s.AccID,
+                                        ua.Email, ua.Password,
+                                        ys.YearLevel AS Grade, ys.SectionName AS Section,
+                                        sy.SchoolYearID, sy.SchoolYear
+                                    FROM Student s
+                                    INNER JOIN User_Account ua ON s.AccID = ua.AccID
+                                    INNER JOIN Enrollment e ON s.StudID = e.StudID
+                                    INNER JOIN Year_Section ys ON e.YearSecID = ys.YearSecID
+                                    INNER JOIN SchoolYear sy ON e.SchoolYearID = sy.SchoolYearID
+                                    WHERE s.AccID = ?
+                                    ORDER BY sy.SchoolYearID DESC
+                                    LIMIT 1
                                     ");
                 $stmt2->bind_param("i", $accID);
                 $stmt2->execute();
@@ -192,8 +202,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $userData['UserType'] = 'Teacher';
 
             } 
-            elseif ($usertype === 'principal') {
-               $stmt2 = $conn->prepare("SELECT p.TeacherID, p.Fname, p.Mname, p.Lname, p.AccID, ua.Email, ua.Password
+            elseif ($usertype === 'Principal') {
+               $stmt2 = $conn->prepare("SELECT p.PrincipalID, p.Fname, p.Mname, p.Lname, p.AccID, ua.Email, ua.Password
                          FROM Principal p
                          JOIN User_Account ua ON p.AccID = ua.AccID
                          WHERE p.AccID = ?");
@@ -201,7 +211,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $stmt2->execute();
                     $res2 = $stmt2->get_result();
                     $userData = $res2->fetch_assoc();
-                    $userData['UserType'] = 'principal';
+                    $userData['UserType'] = 'Principal';
 
             }
 

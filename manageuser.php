@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = password_hash($data['password'], PASSWORD_DEFAULT);
 
         $stmt = $conn->prepare("INSERT INTO user_account (email, password, UserType, status ) VALUES (?, ?,?, 1)");
-        $stmt->bind_param("sss", $email, $password);
+        $stmt->bind_param("sss", $email, $password,$usertype);
 
         if ($stmt->execute()) {
             $accid = $conn->insert_id;
@@ -80,6 +80,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt2->bind_param("sisss", $adminid, $accid, $fname, $mname, $lname);
             if ($stmt2->execute()) {
                 echo json_encode(['status' => 'success', 'message' => 'Admin registered successfully']);
+            } else {
+                echo json_encode(['status' => 'error', 'message' => 'Failed to insert admin: ' . $stmt2->error]);
+            }
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Failed to insert user account: ' . $stmt->error]);
+        }
+        exit();
+    }
+
+    // reg principal
+     else if ($data['action'] === 'register_principal') {
+        file_put_contents('log.txt', json_encode($data, JSON_PRETTY_PRINT) . "\n", FILE_APPEND);
+        $fname = $data['fname'];
+        $mname = $data['mname'];
+        $lname = $data['lname'];
+        $principalid = $data['principalid'];
+        $email = $data['email'];
+        $usertype = $data['usertype'];
+        $password = password_hash($data['password'], PASSWORD_DEFAULT);
+
+        $stmt = $conn->prepare("INSERT INTO user_account (email, password, UserType, status ) VALUES (?, ?, ?, 1)");
+        $stmt->bind_param("sss", $email, $password, $usertype);
+
+        if ($stmt->execute()) {
+            $accid = $conn->insert_id;
+            $stmt2 = $conn->prepare("INSERT INTO principal (principalid, accid, fname, mname, lname) VALUES (?, ?, ?, ?, ?)");
+            $stmt2->bind_param("sisss", $principalid, $accid, $fname, $mname, $lname);
+            if ($stmt2->execute()) {
+                echo json_encode(['status' => 'success', 'message' => 'Principal registered successfully']);
             } else {
                 echo json_encode(['status' => 'error', 'message' => 'Failed to insert admin: ' . $stmt2->error]);
             }
@@ -252,7 +281,7 @@ if(isset($data['action']) && $data['action'] === 'getUserAccount') {
                                 s.mname AS Mname,
                                 s.lname AS Lname,
                                 ys.YearLevel AS Grade,
-                                ys.yearsecid as YearSec,
+                                ys.yearsecid AS YearSec,
                                 ys.SectionName AS Section,
                                 s.image AS image,
                                 ua.accid,
@@ -263,7 +292,13 @@ if(isset($data['action']) && $data['action'] === 'getUserAccount') {
                             INNER JOIN user_account ua ON s.accid = ua.accid
                             INNER JOIN enrollment e ON s.studid = e.studid
                             INNER JOIN year_section ys ON e.yearsecid = ys.yearsecid
-                            WHERE e.SchoolYear = (SELECT MAX(SchoolYear) FROM enrollment WHERE studid = s.studid)
+                            INNER JOIN schoolyear sy ON e.schoolyearid = sy.schoolyearid
+                            WHERE sy.SchoolYearID = (
+                                SELECT MAX(sy2.SchoolYearID)
+                                FROM enrollment e2
+                                INNER JOIN schoolyear sy2 ON e2.schoolyearid = sy2.schoolyearid
+                                WHERE e2.studid = s.studid
+                            )
 
                             UNION ALL
 
@@ -272,7 +307,7 @@ if(isset($data['action']) && $data['action'] === 'getUserAccount') {
                                 t.fname AS Fname,
                                 t.mname AS Mname,
                                 t.lname AS Lname,
-                                Null AS YearSec,
+                                NULL AS YearSec,
                                 NULL AS Grade,
                                 NULL AS Section,
                                 t.image AS image,
@@ -281,7 +316,8 @@ if(isset($data['action']) && $data['action'] === 'getUserAccount') {
                                 CASE ua.status WHEN 1 THEN 'Active' ELSE 'Inactive' END AS status,
                                 'Teacher' AS role
                             FROM teacher t
-                            INNER JOIN user_account ua ON t.accid = ua.accid
+                            INNER JOIN user_account ua ON t.accid = ua.accid;
+
                         ");
   
         $stmt->execute();

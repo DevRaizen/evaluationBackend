@@ -17,40 +17,63 @@ include 'db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents("php://input"), true);
 
-    if (isset($data['action']) && $data['action'] === 'createSchedule') {
+   if (isset($data['action']) && $data['action'] === 'createSchedule') {
 
-        $schedule = $data['schedule'];
+    $schedule = $data['schedule'];
 
-        $title = trim($schedule['title']);
-        $startDate = trim($schedule['startDate']);
-        $endDate = trim($schedule['endDate']);
-        $status = trim($schedule['status']);
-        $targetGrades = $schedule['targetGrades']; 
-        $schoolYear = trim($schedule['schoolYear']);
-        $adminID = (int)$schedule['adminID'];
-        $QID = (int)$schedule['questionnaireID']; 
+    $title = trim($schedule['title']);
+    $startDate = trim($schedule['startDate']);
+    $endDate = trim($schedule['endDate']);
+    $status = trim($schedule['status']);
+    $targetGrades = $schedule['targetGrades']; 
+    $schoolYearID = (int)($schedule['schoolYearID']);
+    $adminID = (int)$schedule['adminID'];
+    $QID = (int)$schedule['questionnaireID']; 
 
+    $targetGradeStr = implode(', ', $targetGrades);
 
-        $targetGradeStr = implode(', ', $targetGrades);
+  $checkStmt = $conn->prepare("SELECT COUNT(*) AS cnt FROM Evaluation_Settings WHERE SchoolYearID = ?");
+    $checkStmt->bind_param("i", $schoolYearID);
+    $checkStmt->execute();
+    $checkResult = $checkStmt->get_result()->fetch_assoc();
+    $checkStmt->close();
 
-       
-        // Validate required fields
-        if ($title !== '' && $startDate !== '' && $endDate !== '' && !empty($targetGrades)) {
-            $stmt = $conn->prepare("INSERT INTO Evaluation_Settings (Title, StartDate, EndDate, Status, TargetGrade, SchoolYear, AdminID, QID)
-                                VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssssii", $title, $startDate, $endDate, $status,$targetGradeStr, $schoolYear, $adminID, $QID);
-
-            if ($stmt->execute()) {
-        
-                echo json_encode([  'status' => 'success','scheduleID' => $stmt->insert_id ]);
-            } else { 
-                   echo json_encode(['status' => 'error',  'message' => 'Database error: ' . $stmt->error ]);
-            }
-        } else { 
-            echo json_encode([  'status' => 'invalid', 'message' => 'Missing required fields' ]);
-        }
+    if ((int)$checkResult['cnt'] > 0) {
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Only one evaluation is allowed per school year'
+        ]);
         exit();
-    } 
+    }
+
+
+
+    // Validate required fields
+    if ($title !== '' && $startDate !== '' && $endDate !== '' && !empty($targetGrades)) {
+        $stmt = $conn->prepare("INSERT INTO Evaluation_Settings (Title, StartDate, EndDate, Status, TargetGrade, SchoolYearID, AdminID, QID)
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssiii", $title, $startDate, $endDate, $status, $targetGradeStr, $schoolYearID, $adminID, $QID);
+
+        if ($stmt->execute()) {
+            echo json_encode([
+                'status' => 'success',
+                'scheduleID' => $stmt->insert_id
+            ]);
+        } else { 
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Database error: ' . $stmt->error
+            ]);
+        }
+    } else { 
+        echo json_encode([
+            'status' => 'invalid',
+            'message' => 'Missing required fields'
+        ]);
+    }
+    exit();
+}
+
 
      if (isset($data['action']) && $data['action'] === 'getEvaluationSettings') {
 

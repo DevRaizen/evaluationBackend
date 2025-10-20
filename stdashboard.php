@@ -13,16 +13,22 @@ error_reporting(E_ALL);
 
 
 include 'db.php'; // Include database connection
-function getCurrentSchoolYear(): string {
-    $month = date('n');
-    if ($month >= 6) {
-        $start = date('Y');
-        $end = $start + 1;
+function getActiveSchoolYearID($conn) {
+    $sql = "SELECT SchoolYearID 
+            FROM SchoolYear 
+            WHERE Status = 'Active' 
+            LIMIT 1";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($row = $result->fetch_assoc()) {
+        return $row['SchoolYearID'];
     } else {
-        $end = date('Y');
-        $start = $end - 1;
+        // fallback if no active school year is found
+        return 1;
     }
-    return $start . '-' . $end;
 }
 
 
@@ -60,16 +66,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $SectionName = $sectionRow['SectionName'];
         $stmt->close();
 
-        $schoolyear = getCurrentSchoolYear();
+        $SchoolYearID = getActiveSchoolYearID($conn);
 
         //kuhanin kona yung teacher sa isang section at yung Subject Nila gamit yung YearLevel at Section name
-        $stmt = $conn->prepare("Select t.Fname, t.Mname, t.Lname, s.SubjectName, tsm.YearLevel, tsm.SectionName, tsm.TeacherID, tsm.SubjectID, t.image, tsm.SchoolYear
+        $stmt = $conn->prepare("Select t.Fname, t.Mname, t.Lname, s.SubjectName, tsm.YearLevel, tsm.SectionName, tsm.TeacherID, tsm.SubjectID, t.image, tsm.SchoolYearID
                                 from teacher_subjectmap tsm 
                                 INNER JOIN teacher t on tsm.TeacherID = t.TeacherID
                                 inner join subject s on tsm.SubjectID = s.subjectID
                                 WHERE
-                                tsm.SchoolYear = ? and tsm.YearLevel = ? and tsm.SectionName = ?");
-        $stmt->bind_param("sss", $schoolyear,$YearLevel,$SectionName);
+                                tsm.SchoolYearID = ? and tsm.YearLevel = ? and tsm.SectionName = ?");
+        $stmt->bind_param("iss", $SchoolYearID,$YearLevel,$SectionName);
         $stmt->execute();
         $res = $stmt->get_result();
 
@@ -121,7 +127,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $stmt->close();
 
     // 3️ Current School Year helper (same as your existing code)
-    $schoolYear = getCurrentSchoolYear();
+    $SchoolYearID = getActiveSchoolYearID($conn);
 
     /* 
        4️  Fetch all teachers for this section/year
@@ -138,11 +144,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                s.SubjectName,
                tsm.YearLevel,
                tsm.SectionName,
-               tsm.SchoolYear
+               tsm.SchoolYearID
         FROM teacher_subjectmap tsm
         INNER JOIN teacher t ON tsm.TeacherID = t.TeacherID
         INNER JOIN subject s ON tsm.SubjectID = s.SubjectID
-        WHERE tsm.SchoolYear = ?
+        WHERE tsm.SchoolYearID = ?
           AND tsm.YearLevel  = ?
           AND tsm.SectionName = ?
           AND NOT EXISTS (
@@ -152,19 +158,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                   AND e.TeacherID = tsm.TeacherID
                   AND e.SubjectID = tsm.SubjectID
                   AND e.ESetID    = ?
-                  AND e.SchoolYear = ?
+                  AND e.SchoolYearID = ?
           )
     ";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param(
-        "ssssis",
-        $schoolYear,
+        "isssii",
+        $SchoolYearID,
         $YearLevel,
         $Section,
         $studID,
         $eSetID,
-        $schoolYear
+        $SchoolYearID
     );
     $stmt->execute();
     $res = $stmt->get_result();

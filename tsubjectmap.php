@@ -53,39 +53,63 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         exit();
     }
 
-    if(isset($data['action']) && $data['action'] === 'getSchoolYear'){
-        $stmt = $conn->prepare("SELECT DISTINCT SchoolYear FROM Enrollment ORDER BY SchoolYear DESC");
-        $stmt->execute();
-        $result = $stmt->get_result();
+  if (isset($data['action']) && $data['action'] === 'getSchoolYear') {
+    $stmt = $conn->prepare("SELECT SchoolYearID, SchoolYear FROM schoolyear ORDER BY SchoolYear DESC");
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        $schoolYears = [];
-        while ($row = $result->fetch_assoc()) {
-            $schoolYears[] = $row['SchoolYear'];
-        }
-
-        echo json_encode([
-            'status' => 'success',
-            'schoolYears' => $schoolYears
-        ]);
-        exit();
+    $schoolYears = [];
+    while ($row = $result->fetch_assoc()) {
+        $schoolYears[] = [
+            'SchoolYearID' => $row['SchoolYearID'],
+            'SchoolYear' => $row['SchoolYear']
+        ];
     }
+
+    echo json_encode([
+        'status' => 'success',
+        'schoolYears' => $schoolYears
+    ]);
+    exit();
+}
+
+
+if (isset($data['action']) && $data['action'] === 'getActiveSchoolYear') {
+    $stmt = $conn->prepare("SELECT SchoolYearID FROM schoolyear WHERE Status = 'Active' ORDER BY SchoolYear DESC");
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $schoolYears = [];
+    while ($row = $result->fetch_assoc()) {
+        $schoolYears[] = [
+            'SchoolYearID' => $row['SchoolYearID'],
+        ];
+    }
+
+    echo json_encode([
+        'status' => 'success',
+        'schoolYears' => $schoolYears
+    ]);
+    exit();
+}
+
 
     if (isset($data['action']) && $data['action'] === 'saveSubjectMapping') {
     $teacherID = $data['teacherID'];
     $subjectID = intval($data['subjectID']);
     $grade = $data['grade'];
     $sections = $data['sections']; // Array of section names
-    $schoolYear = $data['schoolYear'];
+    $schoolYearID = $data['schoolYearID'];
 
     // 1. Check for subject conflict per section
     foreach ($sections as $section) {
         $check = $conn->prepare("SELECT tys.TeacherID, tps.SubjectID 
                                  FROM teacher_yearsection tys
                                  INNER JOIN teacher_perSubject tps 
-                                 ON tys.TeacherID = tps.TeacherID AND tys.SchoolYear = tps.SchoolYear
+                                 ON tys.TeacherID = tps.TeacherID AND tys.SchoolYearID = tps.SchoolYearID
                                  WHERE tys.YearLevel = ? AND tys.SectionName = ? 
-                                 AND tps.SubjectID = ? AND tys.SchoolYear = ? AND tys.TeacherID != ?");
-        $check->bind_param("ssiss", $grade, $section, $subjectID, $schoolYear, $teacherID);
+                                 AND tps.SubjectID = ? AND tys.SchoolYearID = ? AND tys.TeacherID != ?");
+        $check->bind_param("ssiis", $grade, $section, $subjectID, $schoolYearID, $teacherID);
         $check->execute();
         $res = $check->get_result();
 
@@ -100,14 +124,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 
     // 2. Insert into teacher_perSubject if not already exists
-    $checkSub = $conn->prepare("SELECT * FROM teacher_perSubject WHERE TeacherID = ? AND SubjectID = ? AND SchoolYear = ?");
-    $checkSub->bind_param("sis", $teacherID, $subjectID, $schoolYear);
+    $checkSub = $conn->prepare("SELECT * FROM teacher_perSubject WHERE TeacherID = ? AND SubjectID = ? AND SchoolYearID = ?");
+    $checkSub->bind_param("sii", $teacherID, $subjectID, $schoolYearID);
     $checkSub->execute();
     $subResult = $checkSub->get_result();
 
     if ($subResult->num_rows == 0) {
-        $insertSub = $conn->prepare("INSERT INTO teacher_perSubject (TeacherID, SubjectID, SchoolYear) VALUES (?, ?, ?)");
-        $insertSub->bind_param("sis", $teacherID, $subjectID, $schoolYear);
+        $insertSub = $conn->prepare("INSERT INTO teacher_perSubject (TeacherID, SubjectID, SchoolYearID) VALUES (?, ?, ?)");
+        $insertSub->bind_param("sii", $teacherID, $subjectID, $schoolYearID);
         $insertSub->execute();
         $insertSub->close();
     }
@@ -117,14 +141,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     foreach ($sections as $section) {
         // Check if already exists for this teacher
         $checkSection = $conn->prepare("SELECT * FROM teacher_yearsection 
-                                        WHERE TeacherID = ? AND YearLevel = ? AND SectionName = ? AND SchoolYear = ?");
-        $checkSection->bind_param("ssss", $teacherID, $grade, $section, $schoolYear);
+                                        WHERE TeacherID = ? AND YearLevel = ? AND SectionName = ? AND SchoolYearID = ?");
+        $checkSection->bind_param("sssi", $teacherID, $grade, $section, $schoolYearID);
         $checkSection->execute();
         $secResult = $checkSection->get_result();
 
         if ($secResult->num_rows == 0) {
-            $insertSection = $conn->prepare("INSERT INTO teacher_yearsection (TeacherID, YearLevel, SectionName, SchoolYear) VALUES (?, ?, ?, ?)");
-            $insertSection->bind_param("ssss", $teacherID, $grade, $section, $schoolYear);
+            $insertSection = $conn->prepare("INSERT INTO teacher_yearsection (TeacherID, YearLevel, SectionName, SchoolYearID) VALUES (?, ?, ?, ?)");
+            $insertSection->bind_param("sssi", $teacherID, $grade, $section, $schoolYearID);
             $insertSection->execute();
             $insertSection->close();
         }
@@ -135,16 +159,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     // 4. Insert into teacher_subject_map
 foreach ($sections as $section) {
     $checkMap = $conn->prepare("SELECT * FROM teacher_subjectmap 
-                                WHERE TeacherID = ? AND SubjectID = ? AND YearLevel = ? AND SectionName = ? AND SchoolYear = ?");
-    $checkMap->bind_param("sisss", $teacherID, $subjectID, $grade, $section, $schoolYear);
+                                WHERE TeacherID = ? AND SubjectID = ? AND YearLevel = ? AND SectionName = ? AND SchoolYearID = ?");
+    $checkMap->bind_param("sissi", $teacherID, $subjectID, $grade, $section, $schoolYearID);
     $checkMap->execute();
     $mapResult = $checkMap->get_result();
 
     if ($mapResult->num_rows === 0) {
         $insertMap = $conn->prepare("INSERT INTO teacher_subjectmap 
-                                     (TeacherID, SubjectID, YearLevel, SectionName, SchoolYear) 
+                                     (TeacherID, SubjectID, YearLevel, SectionName, SchoolYearID) 
                                      VALUES (?, ?, ?, ?, ?)");
-        $insertMap->bind_param("sisss", $teacherID, $subjectID, $grade, $section, $schoolYear);
+        $insertMap->bind_param("sissi", $teacherID, $subjectID, $grade, $section, $schoolYearID);
         $insertMap->execute();
         $insertMap->close();
     }else{
@@ -173,7 +197,7 @@ if (isset($data['action']) && $data['action'] === 'getTeacherMappings') {
                                 s.SubjectName,
                                 tsm.YearLevel,
                                 tsm.SectionName,
-                                tsm.SchoolYear
+                                tsm.SchoolYearID
                             FROM teacher_subjectmap tsm
                             INNER JOIN subject s ON s.SubjectID = tsm.SubjectID
                             WHERE tsm.TeacherID = ?");
