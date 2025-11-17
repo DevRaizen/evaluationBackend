@@ -16,15 +16,52 @@ try {
     exit;
 }
 
-$today = date('Y-m-d H:i:s'); // current datetime
+date_default_timezone_set('Asia/Manila');
+$today = date('Y-m-d');
+ // current datetime
 $updateSql = "UPDATE evaluation_settings
               SET status = 'Inactive'
-              WHERE status = 'Active' AND endDate < ?";
+              WHERE status = 'Active' AND endDate <= ?";
 $stmt = $pdo->prepare($updateSql);
 $stmt->execute([$today]);
 
 
 $updatedRows = $stmt->rowCount();
+
+// 2️ Activate those within valid date range
+$updateActiveSql = "
+    UPDATE evaluation_settings
+    SET status = 'Active' 
+    WHERE startDate <= ? And endDate > ?
+";
+$stmtActive = $pdo->prepare($updateActiveSql);
+$stmtActive->execute([$today, $today]);
+$activeRows = $stmtActive->rowCount();
+
+
+/*
+$backupFile = __DIR__ . "/tval_backup.sql";
+
+// Full path to mysqldump, escaped for Windows
+$mysqldumpPath = "C:\\xampp\\mysql\\bin\\mysqldump.exe";
+
+// Build command
+if (!empty($password)) {
+    $command = "\"$mysqldumpPath\" -h$host -u$user -p$password $database > \"$backupFile\"";
+} else {
+    $command = "\"$mysqldumpPath\" -h$host -u$user $database > \"$backupFile\"";
+}
+
+// Execute backup
+exec($command . " 2>&1", $output, $result);
+
+if ($result === 0) {
+    echo "✅ Backup successful: $backupFile\n";
+} else {
+    echo "❌ Backup failed. Output:\n";
+    echo implode("\n", $output);
+}
+// ------------------------------------------------------------------
 
 /*
 $query = "SELECT AccID, Password FROM User_Account";

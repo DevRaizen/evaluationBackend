@@ -38,17 +38,25 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         // Kunin ko muna yung YearSection ID nung Student sa enrollment table
       $studID = $data['StudID']; 
 
-      $stmt = $conn->prepare("Select yearsecid from enrollment Where StudID = ?");
-      $stmt->bind_param("s",$studID);
+      $stmt = $conn->prepare("
+    SELECT YearSecID 
+    FROM enrollment 
+    WHERE StudID = ? 
+    AND SchoolYearID = (
+        SELECT MAX(SchoolYearID) 
+        FROM enrollment 
+        WHERE StudID = ?
+    )
+");
+$stmt->bind_param("ss", $studID, $studID);
       $stmt->execute();
       $res = $stmt->get_result();
-
       if($res->num_rows === 0){
          echo json_encode(['status' => 'error', 'message' => 'Student not found']);
         exit();
       }
       $row = $res->fetch_assoc();
-      $yearsecID = $row['yearsecid'];
+      $yearsecID = $row['YearSecID'];
       $stmt->close();
 
         // kuhanin ko namna kung ano yung yearLevel at Section nung YearSecID na nakuha kay student
@@ -100,8 +108,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
    
     // 1️ Find the YearSecID of the student
-    $stmt = $conn->prepare("SELECT YearSecID FROM enrollment WHERE StudID = ?");
-    $stmt->bind_param("s", $studID);
+$stmt = $conn->prepare("
+    SELECT YearSecID 
+    FROM enrollment 
+    WHERE StudID = ? 
+    AND SchoolYearID = (
+        SELECT MAX(SchoolYearID) 
+        FROM enrollment 
+        WHERE StudID = ?
+    )
+");
+$stmt->bind_param("ss", $studID, $studID);
     $stmt->execute();
     $res = $stmt->get_result();
     if ($res->num_rows === 0) {
@@ -188,6 +205,64 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     exit();
 }
 
+
+/* =========================== */
+if (isset($data['action']) && $data['action'] === 'renewEnrollment') {
+    $accID = $data['accID'] ?? '';
+    $studID = $data['studID'] ?? '';
+    $yearLevel = $data['yearLevel'] ?? '';
+    $section = $data['section'] ?? '';
+    $SchoolYearID = getActiveSchoolYearID($conn);
+
+    if (empty($accID) || empty($studID) || empty($yearLevel) || empty($section)) {
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Missing required fields.'
+        ]);
+        exit;
+    }
+
+    // Step 1: Update user_account status to 2 (renewed)
+    $stmt = $conn->prepare("UPDATE user_account SET Status = 2 WHERE AccID = ?");
+    $stmt->bind_param("s", $accID);
+    $stmt->execute();
+    $stmt->close();
+
+    // ✅ Step 2: Get YearSecID from year_section
+    $stmt = $conn->prepare("SELECT YearSecID FROM year_section WHERE YearLevel = ? AND SectionName = ?");
+    $stmt->bind_param("ss", $yearLevel, $section);
+    $stmt->execute();
+    $res = $stmt->get_result();
+
+    if ($row = $res->fetch_assoc()) {
+        $yearSecID = $row['YearSecID'];
+    } else {
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'No matching YearSecID found for this grade and section.'
+        ]);
+        exit;
+    }
+    $stmt->close();
+
+    // ✅ Step 3: Insert new enrollment record with YearSecID
+    $stmt = $conn->prepare("INSERT INTO enrollment (StudID, YearSecID, SchoolYearID) VALUES (?, ?, ?)");
+    $stmt->bind_param("sii", $studID, $yearSecID, $SchoolYearID);
+
+    if ($stmt->execute()) {
+        echo json_encode([
+            'status' => 'success',
+            'message' => 'Enrollment renewed successfully.'
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Failed to insert enrollment record.'
+        ]);
+    }
+
+    $stmt->close();
+}
 
 
 }

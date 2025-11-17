@@ -94,99 +94,173 @@ if (isset($data['action']) && $data['action'] === 'getActiveSchoolYear') {
 }
 
 
-    if (isset($data['action']) && $data['action'] === 'saveSubjectMapping') {
+if (isset($data['action']) && $data['action'] === 'saveSubjectMapping') {
     $teacherID = $data['teacherID'];
     $subjectID = intval($data['subjectID']);
     $grade = $data['grade'];
     $sections = $data['sections']; // Array of section names
     $schoolYearID = $data['schoolYearID'];
+    $TeacherName = $data['Teacher'] ?? '';
+    $accID = $data['AccID'] ?? '';
 
-    // 1. Check for subject conflict per section
     foreach ($sections as $section) {
-        $check = $conn->prepare("SELECT tys.TeacherID, tps.SubjectID 
-                                 FROM teacher_yearsection tys
-                                 INNER JOIN teacher_perSubject tps 
-                                 ON tys.TeacherID = tps.TeacherID AND tys.SchoolYearID = tps.SchoolYearID
-                                 WHERE tys.YearLevel = ? AND tys.SectionName = ? 
-                                 AND tps.SubjectID = ? AND tys.SchoolYearID = ? AND tys.TeacherID != ?");
-        $check->bind_param("ssiis", $grade, $section, $subjectID, $schoolYearID, $teacherID);
-        $check->execute();
-        $res = $check->get_result();
 
-        if ($res->num_rows > 0) {
+        // 🔍 1. Check if another teacher already assigned this subject for the same section
+        $checkOther = $conn->prepare("
+            SELECT * FROM teacher_subjectmap
+            WHERE YearLevel = ? 
+              AND SectionName = ? 
+              AND SubjectID = ? 
+              AND SchoolYearID = ? 
+              AND TeacherID != ?
+        ");
+        $checkOther->bind_param("ssiis", $grade, $section, $subjectID, $schoolYearID, $teacherID);
+        $checkOther->execute();
+        $resOther = $checkOther->get_result();
+
+        if ($resOther->num_rows > 0) {
             echo json_encode([
                 'status' => 'error',
-                'message' => "Section '$section' is already assigned to You for this subject."
+                'message' => "Section '$section' is already assigned to other teacher for this subject."
             ]);
             exit();
         }
-        $check->close();
-    }
+        $checkOther->close();
 
-    // 2. Insert into teacher_perSubject if not already exists
-    $checkSub = $conn->prepare("SELECT * FROM teacher_perSubject WHERE TeacherID = ? AND SubjectID = ? AND SchoolYearID = ?");
-    $checkSub->bind_param("sii", $teacherID, $subjectID, $schoolYearID);
-    $checkSub->execute();
-    $subResult = $checkSub->get_result();
 
-    if ($subResult->num_rows == 0) {
-        $insertSub = $conn->prepare("INSERT INTO teacher_perSubject (TeacherID, SubjectID, SchoolYearID) VALUES (?, ?, ?)");
-        $insertSub->bind_param("sii", $teacherID, $subjectID, $schoolYearID);
-        $insertSub->execute();
-        $insertSub->close();
-    }
-    $checkSub->close();
+        // 🔍 2. Check if this teacher already assigned this same subject & section (avoid duplicates)
+        $checkSelf = $conn->prepare("
+            SELECT * FROM teacher_subjectmap
+            WHERE TeacherID = ? 
+              AND SubjectID = ? 
+              AND YearLevel = ? 
+              AND SectionName = ? 
+              AND SchoolYearID = ?
+        ");
+        $checkSelf->bind_param("sissi", $teacherID, $subjectID, $grade, $section, $schoolYearID);
+        $checkSelf->execute();
+        $resSelf = $checkSelf->get_result();
 
-    // 3. Insert each section into teacher_yearsection
-    foreach ($sections as $section) {
-        // Check if already exists for this teacher
-        $checkSection = $conn->prepare("SELECT * FROM teacher_yearsection 
-                                        WHERE TeacherID = ? AND YearLevel = ? AND SectionName = ? AND SchoolYearID = ?");
-        $checkSection->bind_param("sssi", $teacherID, $grade, $section, $schoolYearID);
-        $checkSection->execute();
-        $secResult = $checkSection->get_result();
-
-        if ($secResult->num_rows == 0) {
-            $insertSection = $conn->prepare("INSERT INTO teacher_yearsection (TeacherID, YearLevel, SectionName, SchoolYearID) VALUES (?, ?, ?, ?)");
-            $insertSection->bind_param("sssi", $teacherID, $grade, $section, $schoolYearID);
-            $insertSection->execute();
-            $insertSection->close();
-        }
-        $checkSection->close();
-    }
-
-    
-    // 4. Insert into teacher_subject_map
-foreach ($sections as $section) {
-    $checkMap = $conn->prepare("SELECT * FROM teacher_subjectmap 
-                                WHERE TeacherID = ? AND SubjectID = ? AND YearLevel = ? AND SectionName = ? AND SchoolYearID = ?");
-    $checkMap->bind_param("sissi", $teacherID, $subjectID, $grade, $section, $schoolYearID);
-    $checkMap->execute();
-    $mapResult = $checkMap->get_result();
-
-    if ($mapResult->num_rows === 0) {
-        $insertMap = $conn->prepare("INSERT INTO teacher_subjectmap 
-                                     (TeacherID, SubjectID, YearLevel, SectionName, SchoolYearID) 
-                                     VALUES (?, ?, ?, ?, ?)");
-        $insertMap->bind_param("sissi", $teacherID, $subjectID, $grade, $section, $schoolYearID);
-        $insertMap->execute();
-        $insertMap->close();
-    }else{
+        if ($resSelf->num_rows > 0) {
             echo json_encode([
+                'status' => 'error',
+                'message' => "Section '$section' is already assigned to you for this subject."
+            ]);
+            exit();
+        }
+        $checkSelf->close();
+
+
+        // ✅ 3. If no conflict, insert new mapping
+        $insert = $conn->prepare("
+            INSERT INTO teacher_subjectmap (TeacherID, SubjectID, YearLevel, SectionName, SchoolYearID)
+            VALUES (?, ?, ?, ?, ?)
+        ");
+        $insert->bind_param("sissi", $teacherID, $subjectID, $grade, $section, $schoolYearID);
+        $insert->execute();
+        $insert->close();
+    }
+         $stmtLog = $conn->prepare("INSERT INTO logs (Name, AccID, Activity, TimeStamp) VALUES (?, ?, 'Saved Subject Mappings', NOW())");
+        $stmtLog->bind_param("si", $TeacherName,$accID);
+        $stmtLog->execute();
+        $stmtLog->close();
+    echo json_encode([
+        'status' => 'success',
+        'message' => 'Subject and section mapping saved successfully.'
+    ]);
+    exit();
+}
+if (isset($data['action']) && $data['action'] === 'deleteSubjectMapping') {
+    $teacherID = $data['teacherID'];
+    $subjectID = intval($data['subjectID']);
+    $schoolYearID = $data['schoolYearID'];
+    $sectionName = $data['sectionName'] ?? ''; // Section to delete
+    $TeacherName = $data['Teacher'] ?? '';
+    $accID = $data['AccID'] ?? '';
+
+    file_put_contents('log.txt', "Request Data: " . json_encode($data) . "\n", FILE_APPEND);
+
+    // 1️⃣ Check if any evaluations already exist for this teacher & subject in the school year
+    $checkEval = $conn->prepare("
+        SELECT 1 FROM evaluation
+        WHERE TeacherID = ?
+          AND SubjectID = ?
+          AND SchoolYearID = ?
+        LIMIT 1
+    ");
+    $checkEval->bind_param("sii", $teacherID, $subjectID, $schoolYearID);
+    $checkEval->execute();
+    $resEval = $checkEval->get_result();
+
+    if ($resEval->num_rows > 0) {
+        echo json_encode([
             'status' => 'error',
-            'message' => "Section is already assigned to other teacher for this subject."
+            'message' => "Cannot delete mapping. Students in this subject already have evaluations."
         ]);
+        $checkEval->close();
         exit();
     }
+    $checkEval->close();
 
+    // 2️⃣ Check if the mapping exists before attempting delete
+    $checkMap = $conn->prepare("
+        SELECT 1 FROM teacher_subjectmap
+        WHERE TeacherID = ?
+          AND SubjectID = ?
+          AND SectionName = ?
+          AND SchoolYearID = ?
+        LIMIT 1
+    ");
+    $checkMap->bind_param("sisi", $teacherID, $subjectID, $sectionName, $schoolYearID);
+    $checkMap->execute();
+    $resMap = $checkMap->get_result();
+
+    if ($resMap->num_rows === 0) {
+        echo json_encode([
+            'status' => 'error',
+            'message' => "No subject mapping found to delete."
+        ]);
+        $checkMap->close();
+        exit();
+    }
     $checkMap->close();
+
+    // 3️⃣ Delete the mapping
+    $delete = $conn->prepare("
+        DELETE FROM teacher_subjectmap
+        WHERE TeacherID = ?
+          AND SubjectID = ?
+          AND SectionName = ?
+          AND SchoolYearID = ?
+    ");
+    $delete->bind_param("sisi", $teacherID, $subjectID, $sectionName, $schoolYearID);
+    $delete->execute();
+
+    if ($delete->affected_rows > 0) {
+        // 4️⃣ Log the deletion
+        $stmtLog = $conn->prepare("
+            INSERT INTO logs (Name, AccID, Activity, TimeStamp) 
+            VALUES (?, ?, 'Deleted Subject Mapping', NOW())
+        ");
+        $stmtLog->bind_param("si", $TeacherName, $accID);
+        $stmtLog->execute();
+        $stmtLog->close();
+
+        echo json_encode([
+            'status' => 'success',
+            'message' => "Subject mapping deleted successfully."
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 'error',
+            'message' => "Failed to delete subject mapping."
+        ]);
+    }
+
+    $delete->close();
+    exit();
 }
-    echo json_encode([
-    'status' => 'success',
-    'message' => 'Subject and sections saved successfully.'
-]);
-exit();
-}
+
 
 
 if (isset($data['action']) && $data['action'] === 'getTeacherMappings') {
@@ -197,9 +271,11 @@ if (isset($data['action']) && $data['action'] === 'getTeacherMappings') {
                                 s.SubjectName,
                                 tsm.YearLevel,
                                 tsm.SectionName,
-                                tsm.SchoolYearID
+                                tsm.SchoolYearID,
+                                sy.SchoolYear
                             FROM teacher_subjectmap tsm
                             INNER JOIN subject s ON s.SubjectID = tsm.SubjectID
+                            inner join SchoolYear sy on sy.SchoolYearID = tsm.SchoolYearID
                             WHERE tsm.TeacherID = ?");
     $stmt->bind_param("s", $teacherID);
     $stmt->execute();

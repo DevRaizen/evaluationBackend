@@ -60,6 +60,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             'status' => 'success',
             'data' => $data
         ]);
+
+         file_put_contents('log.txt', json_encode($data) . "\n", FILE_APPEND);
     $stmt->close();
 }
 
@@ -171,7 +173,6 @@ if (isset($data['action']) && $data['action'] === 'getTeacherFeedback') {
     ]);
     exit;
 }
-
 
 }
 

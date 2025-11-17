@@ -30,7 +30,9 @@ function getActiveSchoolYearID($conn) {
 
 if(isset($data['action']) && $data['action'] === 'count_students') {
        
-        $stmt = $conn->prepare("SELECT count(*) as count FROM Student ");
+        $stmt = $conn->prepare("SELECT count(*) as count FROM Student s
+                                inner join user_account ua on ua.AccID = s.AccID 
+                                where ua.status = 1");
         $stmt->execute();
         $result = $stmt->get_result();
         $row = $result->fetch_assoc(); 
@@ -60,7 +62,9 @@ if (isset($data['action']) && $data['action'] === 'count_students_by_grade') {
     $sql = "
     SELECT yr.YearLevel as grade, COUNT(e.studid) as count from enrollment e
     Inner JOIN year_section yr on e.YearSecID = yr.YearSecID 
-    WHERE yr.YearLevel in('7','8','9','10') and e.SchoolYearID = ?
+    inner join student s on e.studid = s.studid
+    inner join user_account ua on s.AccID = ua.AccID
+    WHERE yr.YearLevel in('7','8','9','10') and e.SchoolYearID = ? and ua.status = 1
     GROUP by yr.YearLevel ORDER by yr.YearLevel;
     ";
 
@@ -89,14 +93,12 @@ if (isset($data['action']) && $data['action'] === 'count_students_by_grade') {
 }
 
 if (isset($data['action']) && $data['action'] === 'getTop3TeachersByAverage') {
-    file_put_contents('log.txt', json_encode($data) . "\n", FILE_APPEND);
     $schoolYearID = (int)($data['SchoolYearID'] ?? 0);
 
     if (!$schoolYearID) {
         echo json_encode(['status' => 'error', 'message' => 'Missing SchoolYearID']);
         exit();
     }
-
 
     $sql = "
         SELECT 
@@ -105,7 +107,7 @@ if (isset($data['action']) && $data['action'] === 'getTop3TeachersByAverage') {
             t.Image AS TeacherImage,
             e.SchoolYearID,
             r.CatID,
-            ROUND(AVG(r.Score), 2) AS AvgScore
+            ROUND(AVG(r.Score), 1) AS AvgScore
         FROM evaluation e
         INNER JOIN result r ON e.EvalID = r.EvalID
         INNER JOIN teacher t ON e.TeacherID = t.TeacherID
@@ -126,7 +128,6 @@ if (isset($data['action']) && $data['action'] === 'getTop3TeachersByAverage') {
 
     $teacherData = [];
     while ($row = $result->fetch_assoc()) {
-        file_put_contents('log.txt', "Row: " . json_encode($row) . "\n", FILE_APPEND);
         $tid = $row['TeacherID'];
         if (!isset($teacherData[$tid])) {
             $teacherData[$tid] = [
@@ -143,20 +144,30 @@ if (isset($data['action']) && $data['action'] === 'getTop3TeachersByAverage') {
 
     foreach ($teacherData as &$teacher) {
         if (count($teacher['CategoryScores']) > 0) {
-            $teacher['FinalAvg'] = round(array_sum($teacher['CategoryScores']) / count($teacher['CategoryScores']), 2);
+            $teacher['FinalAvg'] = round(array_sum($teacher['CategoryScores']) / count($teacher['CategoryScores']), 1);
         }
     }
     unset($teacher);
 
+    // Sort by average descending
     usort($teacherData, fn($a, $b) => $b['FinalAvg'] <=> $a['FinalAvg']);
-    $top3 = array_slice(array_values($teacherData), 0, 3);
+
+    // Get unique averages
+    $uniqueAverages = array_values(array_unique(array_map(fn($t) => $t['FinalAvg'], $teacherData)));
+
+    // Get top 3 unique averages
+    $top3Averages = array_slice($uniqueAverages, 0, 3);
+
+    // Filter teachers who belong to those top 3 averages
+    $topTeachers = array_filter($teacherData, fn($t) => in_array($t['FinalAvg'], $top3Averages));
 
     echo json_encode([
         'status' => 'success',
-        'top3' => $top3
+        'top3' => array_values($topTeachers)
     ]);
     exit();
 }
+
 
 if (isset($data['action']) && $data['action'] === 'getHighestCategory') {
     file_put_contents('log.txt', json_encode($data) . "\n", FILE_APPEND);

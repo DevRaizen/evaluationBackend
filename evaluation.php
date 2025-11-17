@@ -39,6 +39,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $schoolYearID = $data['SchoolYearID'];
     $answers    = $data['answers'];          // now a nested array
     $optional   = $data['Optionalanswers'];  // if you need it
+    $studName = $data['Student'] ?? '';
+    $accID = $data['AccID'] ?? '';
 
     $conn->begin_transaction();
 
@@ -81,7 +83,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
 
         // 3. (Optional) handle $optional if needed
-
+         $stmtLog = $conn->prepare("INSERT INTO logs (Name,AccID, Activity, TimeStamp) VALUES (?,?, 'Submitted Evaluation', NOW())");
+        $stmtLog->bind_param("si", $studName,$accID);
+        $stmtLog->execute();
+        $stmtLog->close();
         $conn->commit();
         echo json_encode(['status' => 'success', 'evalID' => $evalID]);
 
