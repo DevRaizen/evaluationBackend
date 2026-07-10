@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents("php://input"), true);
 
    if (isset($data['action']) && $data['action'] === 'createSchedule') {
-
+    file_put_contents('log.txt', json_encode($data) . "\n", FILE_APPEND);
     $schedule = $data['schedule'];
 
     $title = trim($schedule['title']);
@@ -46,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $schoolYearID = getActiveSchoolYearID($conn);
     $adminID = $schedule['adminID'];
     $QID = (int)$schedule['questionnaireID']; 
-    $adminName = $data['Admin'] ?? '';
-    $accID = $data['AccID'] ?? '';
+    $adminName = $schedule['Admin'] ?? '';
+    $accID = $schedule['AccID'] ?? '';
     $targetGradeStr = implode(', ', $targetGrades);
 
         $checkOverlap = $conn->prepare("
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("sssssisi", $title, $startDate, $endDate, $status, $targetGradeStr, $schoolYearID, $adminID, $QID);
 
         if ($stmt->execute()) {
-            $stmtLog = $conn->prepare("INSERT INTO logs (Name,AccID, Activity, TimeStamp) VALUES (?, ?,'Schedule an Evaluation', NOW())");
+            $stmtLog = $conn->prepare("INSERT INTO logs (Name, AccID, Activity, TimeStamp) VALUES (?, ?,'Schedule an Evaluation', NOW())");
             $stmtLog->bind_param("si", $adminName,$accID);
             $stmtLog->execute();
             $stmtLog->close();

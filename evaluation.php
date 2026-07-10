@@ -7,7 +7,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header('Content-Type: application/json');
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
@@ -95,6 +95,28 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
     exit();
 }
+
+
+if (isset($data['action']) && $data['action'] === 'checkIfEvaluated') {
+    file_put_contents('log.txt', json_encode($data) . "\n", FILE_APPEND);
+    $teacherID = $data['teacherID'];
+    $subjectID = $data['subjectID'];
+    $schoolYearID = $data['schoolYearID'];
+
+    $stmt = $conn->prepare("
+        SELECT * FROM evaluation
+        WHERE TeacherID = ? AND SubjectID = ? AND SchoolYearID = ?
+    ");
+    $stmt->bind_param("sii", $teacherID, $subjectID, $schoolYearID);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    echo json_encode([
+        'evaluated' => $result->num_rows > 0
+    ]);
+    exit();
+}
+
 
 }
 ?>

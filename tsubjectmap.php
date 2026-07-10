@@ -106,45 +106,57 @@ if (isset($data['action']) && $data['action'] === 'saveSubjectMapping') {
     foreach ($sections as $section) {
 
         // 🔍 1. Check if another teacher already assigned this subject for the same section
-        $checkOther = $conn->prepare("
-            SELECT * FROM teacher_subjectmap
-            WHERE YearLevel = ? 
-              AND SectionName = ? 
-              AND SubjectID = ? 
-              AND SchoolYearID = ? 
-              AND TeacherID != ?
-        ");
+      $checkOther = $conn->prepare("
+    SELECT tsm.*, Concat(t.fname, ' ', t.mname, ' ', t.lname) as TeacherName, s.SubjectName
+    FROM teacher_subjectmap tsm
+    INNER JOIN teacher t ON tsm.TeacherID = t.TeacherID
+    inner join subject s on s.SubjectID = tsm.SubjectID
+    WHERE tsm.YearLevel = ? 
+      AND tsm.SectionName = ? 
+      AND tsm.SubjectID = ? 
+      AND tsm.SchoolYearID = ? 
+      AND tsm.TeacherID != ?
+");
+
         $checkOther->bind_param("ssiis", $grade, $section, $subjectID, $schoolYearID, $teacherID);
         $checkOther->execute();
         $resOther = $checkOther->get_result();
 
         if ($resOther->num_rows > 0) {
+            $row = $resOther->fetch_assoc();
+            $otherTeacherName = $row['TeacherName'];
+            $SubjectName = $row['SubjectName'];
+
             echo json_encode([
                 'status' => 'error',
-                'message' => "Section '$section' is already assigned to other teacher for this subject."
+                'message' => "$section is already assigned to $otherTeacherName for the subject $SubjectName."
             ]);
             exit();
         }
+
         $checkOther->close();
 
 
         // 🔍 2. Check if this teacher already assigned this same subject & section (avoid duplicates)
         $checkSelf = $conn->prepare("
-            SELECT * FROM teacher_subjectmap
-            WHERE TeacherID = ? 
-              AND SubjectID = ? 
-              AND YearLevel = ? 
-              AND SectionName = ? 
-              AND SchoolYearID = ?
+            SELECT tsm.*, s.SubjectName FROM teacher_subjectmap tsm
+            inner Join subject s on s.SubjectID = tsm.SubjectID
+            WHERE tsm.TeacherID = ? 
+              AND tsm.SubjectID = ? 
+              AND tsm.YearLevel = ? 
+              AND tsm.SectionName = ? 
+              AND tsm.SchoolYearID = ?
         ");
         $checkSelf->bind_param("sissi", $teacherID, $subjectID, $grade, $section, $schoolYearID);
         $checkSelf->execute();
         $resSelf = $checkSelf->get_result();
 
         if ($resSelf->num_rows > 0) {
+            $row = $resSelf->fetch_assoc();
+            $SubjectName = $row['SubjectName'];
             echo json_encode([
                 'status' => 'error',
-                'message' => "Section '$section' is already assigned to you for this subject."
+                'message' => "You are already assigned to the subject $SubjectName for section $section."
             ]);
             exit();
         }
@@ -170,6 +182,7 @@ if (isset($data['action']) && $data['action'] === 'saveSubjectMapping') {
     ]);
     exit();
 }
+
 if (isset($data['action']) && $data['action'] === 'deleteSubjectMapping') {
     $teacherID = $data['teacherID'];
     $subjectID = intval($data['subjectID']);
@@ -292,6 +305,64 @@ if (isset($data['action']) && $data['action'] === 'getTeacherMappings') {
     ]);
     exit();
 }
+
+
+if (isset($data['action']) && $data['action'] === 'getTeacherSubjectMap') {
+    file_put_contents('log.txt', "Request Data: " . json_encode($data) . "\n", FILE_APPEND);
+    $schoolYearID = $data['schoolYearID'];
+
+    $sql = "SELECT 
+                tsm.tsmID,
+                tsm.TeacherID,
+                tsm.SubjectID,
+                s.SubjectName,
+                tsm.YearLevel,
+                tsm.SectionName,
+                tsm.SchoolYearID,
+                CONCAT(t.fname, ' ', t.mname, ' ', t.lname) AS TeacherName,
+                t.image AS TeacherImage
+            FROM teacher_subjectmap tsm
+            INNER JOIN teacher t ON tsm.TeacherID = t.TeacherID
+            inner join subject s on s.SubjectId = tsm.SubjectID
+            WHERE tsm.SchoolYearID = ?
+            ORDER BY t.lname, t.fname";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $schoolYearID);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $rows = [];
+    $teachers = [];
+    while ($row = $result->fetch_assoc()) {
+        $teacherID = $row['TeacherID'];
+        if (!isset($teachers[$teacherID])) {
+        $teachers[$teacherID] = [
+            'TeacherID' => $row['TeacherID'],
+            'TeacherName' => $row['TeacherName'],
+            'TeacherImage' => $row['TeacherImage'],
+            'SchoolYearID' => $row['SchoolYearID'],
+            'subjects' => []  // nested subjects array
+        ];
+    }
+
+    // Push each subject into the teacher's subjects array
+    $teachers[$teacherID]['subjects'][] = [
+        'tsmID' => $row['tsmID'],
+        'SubjectID' => $row['SubjectID'],
+        'SubjectName' => $row['SubjectName'],
+        'YearLevel' => $row['YearLevel'],
+        'SectionName' => $row['SectionName']
+    ];
+    }
+
+    echo json_encode([
+    'status' => 'success',
+    'data' => array_values($teachers) 
+]);
+    exit;
+}
+
 
 }
 
