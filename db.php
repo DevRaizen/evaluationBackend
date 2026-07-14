@@ -28,19 +28,6 @@ try {
 date_default_timezone_set('Asia/Manila');
 $today = date('Y-m-d');
 
-
-$result = $conn->query("SHOW TABLES");
-
-$tables = [];
-
-while ($row = $result->fetch_array()) {
-    $tables[] = $row[0];
-}
-
-echo json_encode($tables);
-
-exit;
-
  // current datetime
 $updateSql = "UPDATE evaluation_settings
               SET status = 'Inactive'
