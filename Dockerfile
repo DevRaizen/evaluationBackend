@@ -1,9 +1,14 @@
 FROM php:8.3-apache
 
-RUN a2dismod mpm_event mpm_worker 2>/dev/null || true \
-    && a2enmod mpm_prefork
+RUN rm -f /etc/apache2/mods-enabled/mpm_event.load \
+           /etc/apache2/mods-enabled/mpm_event.conf \
+           /etc/apache2/mods-enabled/mpm_worker.load \
+           /etc/apache2/mods-enabled/mpm_worker.conf \
+           /etc/apache2/mods-enabled/mpm_prefork.load \
+           /etc/apache2/mods-enabled/mpm_prefork.conf \
+    && ln -sf ../mods-available/mpm_prefork.load /etc/apache2/mods-enabled/mpm_prefork.load \
+    && ln -sf ../mods-available/mpm_prefork.conf /etc/apache2/mods-enabled/mpm_prefork.conf
 
-ARG CACHEBUST=2
 RUN echo "MODS:" $(ls /etc/apache2/mods-enabled/*.load | tr '\n' ' ')
 
 RUN docker-php-ext-install mysqli
