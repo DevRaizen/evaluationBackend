@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     // Step 1: Check user from User_Account
-    $stmt = $conn->prepare("SELECT * FROM User_Account WHERE Email = ? And  (status = 1 or status = 2 or status = 3)");
+    $stmt = $conn->prepare("SELECT * FROM user_account WHERE Email = ? And  (status = 1 or status = 2 or status = 3)");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
