@@ -1,12 +1,14 @@
 FROM php:8.3-apache
 
-# Disable conflicting Apache MPM modules
-RUN a2dismod mpm_event mpm_worker && a2enmod mpm_prefork
+RUN apt-get update && apt-get install -y \
+    libapache2-mod-php8.3 \
+    && docker-php-ext-install mysqli
 
-# Install mysqli extension
-RUN docker-php-ext-install mysqli
+RUN a2dismod mpm_event mpm_worker || true
+RUN a2enmod mpm_prefork
 
-# Copy project files
 COPY . /var/www/html/
 
 EXPOSE 80
+
+CMD ["apache2-foreground"]
