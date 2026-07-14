@@ -4,6 +4,9 @@ if (!isset($_SESSION['accID']) && isset($_COOKIE['rememberMe'])) {
     $_SESSION['accID'] = $_COOKIE['rememberMe'];
 }
 header("Content-Type: application/json; charset=UTF-8");
+echo json_encode([
+    "test" => "API is working"
+]);
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
