@@ -4,8 +4,11 @@ FROM php:8.3-apache
 RUN a2dismod mpm_event mpm_worker 2>/dev/null || true \
     && a2enmod mpm_prefork
 
-# DEBUG: show what's actually enabled
-RUN echo "=== MODS ENABLED ===" && ls -la /etc/apache2/mods-enabled/ | grep mpm
+# Bust cache to force fresh debug output
+ARG CACHEBUST=1
+
+# DEBUG: show everything in mods-enabled, not just mpm matches
+RUN echo "=== FULL MODS ENABLED LISTING ===" && ls -la /etc/apache2/mods-enabled/
 
 # Install mysqli extension
 RUN docker-php-ext-install mysqli
