@@ -199,11 +199,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         ua.Email, ua.Password,
                                         ys.YearLevel AS Grade, ys.SectionName AS Section,
                                         sy.SchoolYearID, sy.SchoolYear
-                                    FROM Student s
-                                    INNER JOIN User_Account ua ON s.AccID = ua.AccID
-                                    INNER JOIN Enrollment e ON s.StudID = e.StudID
-                                    INNER JOIN Year_Section ys ON e.YearSecID = ys.YearSecID
-                                    INNER JOIN SchoolYear sy ON e.SchoolYearID = sy.SchoolYearID
+                                    FROM student s
+                                    INNER JOIN user_account ua ON s.AccID = ua.AccID
+                                    INNER JOIN enrollment e ON s.StudID = e.StudID
+                                    INNER JOIN year_section ys ON e.YearSecID = ys.YearSecID
+                                    INNER JOIN schoolyear sy ON e.SchoolYearID = sy.SchoolYearID
                                     WHERE s.AccID = ?
                                     ORDER BY sy.SchoolYearID DESC
                                     LIMIT 1
@@ -227,7 +227,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             elseif ($usertype === 'Admin') {
                 $stmt2 = $conn->prepare("SELECT a.AdminID, a.Fname, a.Mname, a.Lname, a.AccID, ua.Email, ua.Password
                          FROM admin a
-                         JOIN User_Account ua ON a.AccID = ua.AccID
+                         JOIN user_account ua ON a.AccID = ua.AccID
                          WHERE a.AccID = ?");
                         $stmt2->bind_param("i", $accID);
                         $stmt2->execute();
@@ -248,8 +248,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } 
             elseif ($usertype === 'Teacher') {
                $stmt2 = $conn->prepare("SELECT t.TeacherID, t.Fname, t.Mname, t.Lname, t.AccID, ua.Email, ua.Password
-                         FROM Teacher t
-                         JOIN User_Account ua ON t.AccID = ua.AccID
+                         FROM teacher t
+                         JOIN user_account ua ON t.AccID = ua.AccID
                          WHERE t.AccID = ?");
                 $stmt2->bind_param("i", $accID);
                 $stmt2->execute();
@@ -270,8 +270,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } 
             elseif ($usertype === 'Principal') {
                $stmt2 = $conn->prepare("SELECT p.PrincipalID, p.Fname, p.Mname, p.Lname, p.AccID, ua.Email, ua.Password
-                         FROM Principal p
-                         JOIN User_Account ua ON p.AccID = ua.AccID
+                         FROM principal p
+                         JOIN user_account ua ON p.AccID = ua.AccID
                          WHERE p.AccID = ?");
                     $stmt2->bind_param("i", $accID);
                     $stmt2->execute();

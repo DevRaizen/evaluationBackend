@@ -28,6 +28,7 @@ try {
 date_default_timezone_set('Asia/Manila');
 $today = date('Y-m-d');
 
+
  // current datetime
 $updateSql = "UPDATE evaluation_settings
               SET status = 'Inactive'
