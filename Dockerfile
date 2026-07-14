@@ -9,13 +9,14 @@ RUN rm -f /etc/apache2/mods-enabled/mpm_event.load \
     && ln -sf ../mods-available/mpm_prefork.load /etc/apache2/mods-enabled/mpm_prefork.load \
     && ln -sf ../mods-available/mpm_prefork.conf /etc/apache2/mods-enabled/mpm_prefork.conf
 
-ARG CACHEBUST=99
+ARG CACHEBUST=100
 
-# This will FAIL the build (loudly, with output) if more than one MPM is enabled
-RUN COUNT=$(ls /etc/apache2/mods-enabled/ | grep -c mpm); \
-    echo "MPM FILES FOUND: $COUNT"; \
-    ls /etc/apache2/mods-enabled/ | grep mpm; \
-    if [ "$COUNT" -ne 2 ]; then echo "ERROR: expected exactly 2 files (load+conf) for 1 MPM, found $COUNT"; exit 1; fi
+# Search EVERYWHERE for LoadModule mpm lines, and fail loudly showing them
+RUN grep -rn "LoadModule mpm" /etc/apache2/ > /tmp/mpmcheck.txt || true; \
+    cat /tmp/mpmcheck.txt; \
+    LINES=$(wc -l < /tmp/mpmcheck.txt); \
+    echo "TOTAL LoadModule mpm LINES FOUND: $LINES"; \
+    if [ "$LINES" -ne 1 ]; then exit 1; fi
 
 RUN docker-php-ext-install mysqli
 
