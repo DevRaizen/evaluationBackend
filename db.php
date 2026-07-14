@@ -1,18 +1,27 @@
 <?php
-$host = "localhost";
-$user = "root";  
-$password = "";
-$database = "tval_db";  
+$host = getenv("MYSQLHOST") ?: "localhost";
+$user = getenv("MYSQLUSER") ?: "root";
+$password = getenv("MYSQLPASSWORD") ?: "";
+$database = getenv("MYSQLDATABASE") ?: "tval_db";
+$port = getenv("MYSQLPORT") ?: 3306;
 
-$conn = new mysqli($host, $user, $password, $database);
+// MySQLi connection
+$conn = new mysqli($host, $user, $password, $database, (int)$port);
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+// PDO connection
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $password);
+    $dsn = "mysql:host=$host;port=$port;dbname=$database;charset=utf8";
+    $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo json_encode(['status' => 'error', 'message' => 'Database connection failed: ' . $e->getMessage()]);
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Database connection failed: ' . $e->getMessage()
+    ]);
     exit;
 }
 

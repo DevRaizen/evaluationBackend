@@ -1718,3 +1718,677 @@ Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
 {"action":"getHighestCategory","TeacherID":"T015","SchoolYearID":1}
 {"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
 {"action":"getHighestCategory","TeacherID":"T014","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":1}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All"}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All"}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+Request Data: {"action":"getUserAccount"}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":"1"}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":"1"}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":"1"}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":"1"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":"6"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":"1"}
+{"action":"saveNewQuestionnaire","title":"Midyear","questions":[{"category":"Communication","text":"How can your teacher further improve communication in class?","type":"comment"},{"category":"Communication","text":"The teacher clarifies misunderstandings when students are confused.","type":"likert"},{"category":"Communication","text":"The teacher communicates course objectives and expectations effectively.","type":"likert"},{"category":"Communication","text":"The teacher encourages students to ask questions and express their ideas.","type":"likert"},{"category":"Respect","text":"The teacher respect the students opinions","type":"likert"},{"category":"Respect","text":"The teacher respects students\u2019 opinions and listens attentively.","type":"likert"},{"category":"Respect","text":"The teacher treats all students fairly and equally.","type":"likert"}],"Admin":"Raizen  Admin","AccID":65}
+{"action":"saveNewQuestionnaire","title":"Midyear","questions":[{"category":"Communication","text":"How can your teacher further improve communication in class?","type":"comment"},{"category":"Communication","text":"The teacher clarifies misunderstandings when students are confused.","type":"likert"},{"category":"Communication","text":"The teacher communicates course objectives and expectations effectively.","type":"likert"},{"category":"Communication","text":"The teacher encourages students to ask questions and express their ideas.","type":"likert"},{"category":"Respect","text":"The teacher respect the students opinions","type":"likert"},{"category":"Respect","text":"The teacher respects students\u2019 opinions and listens attentively.","type":"likert"},{"category":"Respect","text":"The teacher treats all students fairly and equally.","type":"likert"}],"Admin":"Raizen  Admin","AccID":65}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":"1"}
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":"1"}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":"1"}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":"1"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":"6"}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All"}
+{"action":"saveNewQuestionnaire","title":"Midyear","questions":[{"category":"Communication","text":"How can your teacher further improve communication in class?","type":"comment"}],"Admin":"Raizen  Admin","AccID":65}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":1}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All"}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All"}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All"}
+{"action":"saveNewQuestionnaire","title":"Test Question","questions":[{"category":"Communication","text":"How can your teacher further improve communication in class?","type":"comment"},{"category":"Communication","text":"The teacher clarifies misunderstandings when students are confused.","type":"likert"},{"category":"Communication","text":"Raizen","type":"Likert Scale"}],"Admin":"John Michael Doe","AccID":65}
+{"action":"saveNewQuestionnaire","title":"Test Question","questions":[{"category":"Communication","text":"How can your teacher further improve communication in class?","type":"comment"},{"category":"Communication","text":"The teacher clarifies misunderstandings when students are confused.","type":"likert"},{"category":"Communication","text":"Raizen","type":"Likert Scale"}],"Admin":"John Michael Doe","AccID":65}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6},{"CatID":6,"CategoryName":"Feedback","AvgScore":2.9}]
+3
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All","QID":"5"}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All","QID":"5"}
+0
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All","QID":"2"}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All","QID":"2"}
+0
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All","QID":"1"}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All","QID":"1"}
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6},{"CatID":6,"CategoryName":"Feedback","AvgScore":2.9}]
+3
+Request Data: {"action":"getUserAccount"}
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6},{"CatID":6,"CategoryName":"Feedback","AvgScore":2.9}]
+3
+[]
+{"action":"getTeacherResponseCount","TeacherID":null,"SchoolYearID":1}
+{"action":"getTeacherResponseCount","TeacherID":"T00100","SchoolYearID":1}
+[]
+{"action":"getTeacherResponseCount","TeacherID":"T003","SchoolYearID":1}
+[]
+{"action":"getTeacherResponseCount","TeacherID":"T018","SchoolYearID":1}
+[]
+{"action":"getTeacherResponseCount","TeacherID":"T006","SchoolYearID":1}
+[]
+{"action":"getTeacherResponseCount","TeacherID":"T00100","SchoolYearID":1}
+[]
+{"action":"getTeacherResponseCount","TeacherID":"T003","SchoolYearID":1}
+[]
+{"action":"getTeacherResponseCount","TeacherID":"T007","SchoolYearID":1}
+[]
+{"action":"getTeacherResponseCount","TeacherID":"T011","SchoolYearID":1}
+[{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":4,"categoryName":"Time Management","SchoolYearID":1,"AvgScore":"4.8","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || BOBO || good ang galing e || good ang galing e || good ang galing e || asd || asd || goods || goiods || goods"},{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":1,"categoryName":"Respect","SchoolYearID":1,"AvgScore":"4.4","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || BOBO || good ang galing e || good ang galing e || good ang galing e || asd || asd || goods || goiods || goods"},{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":5,"categoryName":"Participation","SchoolYearID":1,"AvgScore":"4.4","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || BOBO || good ang galing e || good ang galing e || good ang galing e || asd || asd || goods || goiods || goods"},{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":2,"categoryName":"Communication","SchoolYearID":1,"AvgScore":"4.3","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || Tanga || Tanga || Tanga || Tanga || Tanga || Tanga || Tanga || BOBO || BOBO || BOBO || BOBO || BOBO || BOBO || BOBO || BOBO || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || goods || goods || goods || goods || goods || goods || goods || goods || goiods || goiods || goiods || goiods || goiods || goiods || goiods || goiods || goods || goods || goods || goods || goods || goods || goods || goods"},{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":3,"categoryName":"Preparedness","SchoolYearID":1,"AvgScore":"4.3","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || Tanga || BOBO || BOBO || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || asd || asd || asd || asd || goods || goods || goiods || goiods || goods || goods"},{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":6,"categoryName":"Feedback","SchoolYearID":1,"AvgScore":"4.0","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || BOBO || good ang galing e || good ang galing e || good ang galing e || asd || asd || goods || goiods || goods"}]
+[]
+{"action":"getTeacherResponseCount","TeacherID":null,"SchoolYearID":1}
+{"action":"getTeacherResponseCount","TeacherID":"T011","SchoolYearID":1}
+[{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":4,"categoryName":"Time Management","SchoolYearID":1,"AvgScore":"4.8","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || BOBO || good ang galing e || good ang galing e || good ang galing e || asd || asd || goods || goiods || goods"},{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":1,"categoryName":"Respect","SchoolYearID":1,"AvgScore":"4.4","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || BOBO || good ang galing e || good ang galing e || good ang galing e || asd || asd || goods || goiods || goods"},{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":5,"categoryName":"Participation","SchoolYearID":1,"AvgScore":"4.4","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || BOBO || good ang galing e || good ang galing e || good ang galing e || asd || asd || goods || goiods || goods"},{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":2,"categoryName":"Communication","SchoolYearID":1,"AvgScore":"4.3","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || Tanga || Tanga || Tanga || Tanga || Tanga || Tanga || Tanga || BOBO || BOBO || BOBO || BOBO || BOBO || BOBO || BOBO || BOBO || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || goods || goods || goods || goods || goods || goods || goods || goods || goiods || goiods || goiods || goiods || goiods || goiods || goiods || goiods || goods || goods || goods || goods || goods || goods || goods || goods"},{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":3,"categoryName":"Preparedness","SchoolYearID":1,"AvgScore":"4.3","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || Tanga || BOBO || BOBO || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || good ang galing e || asd || asd || asd || asd || goods || goods || goiods || goiods || goods || goods"},{"TeacherID":"T011","TeacherName":"Arnold Navarro","catID":6,"categoryName":"Feedback","SchoolYearID":1,"AvgScore":"4.0","Feedbacks":"asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || Tanga || BOBO || good ang galing e || good ang galing e || good ang galing e || asd || asd || goods || goiods || goods"}]
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6},{"CatID":6,"CategoryName":"Feedback","AvgScore":2.9}]
+3
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6},{"CatID":6,"CategoryName":"Feedback","AvgScore":2.9}]
+3
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":1}
+Request Data: {"action":"getUserAccount"}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6},{"CatID":6,"CategoryName":"Feedback","AvgScore":2.9}]
+3
+[]
+{"action":"getTeacherResponseCount","TeacherID":null,"SchoolYearID":1}
+{"action":"getTeacherResponseCount","TeacherID":"T006","SchoolYearID":1}
+[]
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T008","SchoolYearID":1}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6},{"CatID":6,"CategoryName":"Feedback","AvgScore":2.9}]
+3
+[]
+{"action":"getTeacherResponseCount","TeacherID":null,"SchoolYearID":1}
+{"action":"getTeacherResponseCount","TeacherID":"T008","SchoolYearID":1}
+[{"TeacherID":"T008","TeacherName":"Isabel Ramos","catID":2,"categoryName":"Communication","SchoolYearID":1,"AvgScore":"3.5","Feedbacks":"hello || hello || hello || hello || hello || hello || hello || hello || opkay lang || opkay lang || opkay lang || opkay lang || opkay lang || opkay lang || opkay lang || opkay lang || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasd || Rasda || Rasda || Rasda || Rasda || Rasda || Rasda || Rasda || Rasda || Magaling sya || Magaling sya || Magaling sya || Magaling sya || Magaling sya || Magaling sya || Magaling sya || Magaling sya || galingan pa lalo || galingan pa lalo || galingan pa lalo || galingan pa lalo || galingan pa lalo || galingan pa lalo || galingan pa lalo || galingan pa lalo || magaling || magaling || magaling || magaling || magaling || magaling || magaling || magaling || maayos || maayos || maayos || maayos || maayos || maayos || maayos || maayos || wala || wala || wala || wala || wala || wala || wala || wala || goods || goods || goods || goods || goods || goods || goods || goods || goods || goods || goods || goods || goods || goods || goods || goods || good || good || good || good || good || good || good || good || handsome || handsome || handsome || handsome || handsome || handsome || handsome || handsome || good || good || good || good || good || good || good || good || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asda || asda || asda || asda || asda || asda || asda || asda || dasd || dasd || dasd || dasd || dasd || dasd || dasd || dasd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || dsa || dsa || dsa || dsa || dsa || dsa || dsa || dsa || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asda || asda || asda || asda || asda || asda || asda || asda || asd || asd || asd || asd || asd || asd || asd || asd || sad || sad || sad || sad || sad || sad || sad || sad || sad || sad || sad || sad || sad || sad || sad || sad || asda || asda || asda || asda || asda || asda || asda || asda || asdasd || asdasd || asdasd || asdasd || asdasd || asdasd || asdasd || asdasd || aasdasd || aasdasd || aasdasd || aasdasd || aasdasd || aasdasd || aasdasd || aasdasd || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd"},{"TeacherID":"T008","TeacherName":"Isabel Ramos","catID":6,"categoryName":"Feedback","SchoolYearID":1,"AvgScore":"3.5","Feedbacks":"hello || opkay lang || Rasd || Rasd || Rasda || Magaling sya || galingan pa lalo || magaling || maayos || wala || goods || goods || good || handsome || good || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asda || dasd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || dsa || asd || asd || asd || asd || asd || asd || asda || asd || sad || sad || asda || asdasd || aasdasd || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || asd || asd || asd"},{"TeacherID":"T008","TeacherName":"Isabel Ramos","catID":4,"categoryName":"Time Management","SchoolYearID":1,"AvgScore":"3.3","Feedbacks":"hello || opkay lang || Rasd || Rasd || Rasda || Magaling sya || galingan pa lalo || magaling || maayos || wala || goods || goods || good || handsome || good || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asda || dasd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || dsa || asd || asd || asd || asd || asd || asd || asda || asd || sad || sad || asda || asdasd || aasdasd || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || asd || asd || asd"},{"TeacherID":"T008","TeacherName":"Isabel Ramos","catID":5,"categoryName":"Participation","SchoolYearID":1,"AvgScore":"2.8","Feedbacks":"hello || opkay lang || Rasd || Rasd || Rasda || Magaling sya || galingan pa lalo || magaling || maayos || wala || goods || goods || good || handsome || good || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asda || dasd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || dsa || asd || asd || asd || asd || asd || asd || asda || asd || sad || sad || asda || asdasd || aasdasd || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || asd || asd || asd"},{"TeacherID":"T008","TeacherName":"Isabel Ramos","catID":1,"categoryName":"Respect","SchoolYearID":1,"AvgScore":"2.7","Feedbacks":"hello || opkay lang || Rasd || Rasd || Rasda || Magaling sya || galingan pa lalo || magaling || maayos || wala || goods || goods || good || handsome || good || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asda || dasd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || dsa || asd || asd || asd || asd || asd || asd || asda || asd || sad || sad || asda || asdasd || aasdasd || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || asd || asd || asd || asd || asd || asd"},{"TeacherID":"T008","TeacherName":"Isabel Ramos","catID":3,"categoryName":"Preparedness","SchoolYearID":1,"AvgScore":"2.7","Feedbacks":"hello || hello || opkay lang || opkay lang || Rasd || Rasd || Rasd || Rasd || Rasda || Rasda || Magaling sya || Magaling sya || galingan pa lalo || galingan pa lalo || magaling || magaling || maayos || maayos || wala || wala || goods || goods || goods || goods || good || good || handsome || handsome || good || good || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asda || asda || dasd || dasd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || dsa || dsa || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asd || asda || asda || asd || asd || sad || sad || sad || sad || asda || asda || asdasd || asdasd || aasdasd || aasdasd || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || fddgdgfsgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1' || asd || asd || asd || asd || asd || asd"}]
+{"action":"getHighestCategory","TeacherID":"T013","SchoolYearID":1}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":1,"GradeLevel":"All","QID":1}
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6},{"CatID":6,"CategoryName":"Feedback","AvgScore":2.9}]
+3
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getUserAccount"}
+Request Data: {"action":"getUserAccount"}
+Response Data: [{"ID":"s2025-20025","Fname":"Shawn","Mname":"Michael","Lname":"Bulos","Grade":"7","YearSec":"1","Section":"St. Peter","image":"StudentProfile\/s2025-20025\/img_68edf0a6b53504.78926408.jpg","accid":"37","email":"shawnbulos03@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523","Fname":"Lyndon ","Mname":"leonora","Lname":"cabang","Grade":"10","YearSec":"8","Section":"St. Veronica","image":"\/user.png","accid":"38","email":"sharmainepagador@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252","Fname":"Lyndon","Mname":"asd","Lname":"Cabang","Grade":"10","YearSec":"7","Section":"St. Joseph","image":"\/user.png","accid":"39","email":"lyndoncabang@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025232","Fname":"Takte","Mname":"Ka","Lname":"Boss","Grade":"9","YearSec":"5","Section":"St. Therese","image":"\/user.png","accid":"40","email":"shisalleva27@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252323","Fname":"Shawn","Mname":"michael","Lname":"Dela Cruz","Grade":"7","YearSec":"1","Section":"St. Peter","image":"StudentProfile\/s2025-200252323\/img_68d39a1b5e4514.23839369.jpg","accid":"41","email":"arisdiegoml@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025sd","Fname":"harry","Mname":"leonora","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"47","email":"sakuragih805@gmail.com","status":"Active","role":"Student"},{"ID":"asd","Fname":"harry","Mname":"leonora","Lname":"asd","Grade":"7","YearSec":"2","Section":"St. Paul","image":"\/user.png","accid":"48","email":"shawnbulos033@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002522323","Fname":"Shawn","Mname":"Rei","Lname":"Bulos","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"49","email":"shawnbulos0333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523233","Fname":"Gol","Mname":"D","Lname":"Roger","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"52","email":"shawnbulos03333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025223","Fname":"Joseph","Mname":"A","Lname":"Capule","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"62","email":"josephbryan@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-2002512312","Fname":"Shawn","Mname":"leonora","Lname":"teresa","Grade":"7","YearSec":"1","Section":"St. Peter","image":"\/user.png","accid":"63","email":"shawnbulos033333@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-20025223323","Fname":"Raizen","Mname":"Rei","Lname":"Raizen","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"64","email":"shawnbulos0333333@gmail.com","status":"Active","role":"Student"},{"ID":"T001","Fname":"Juan","Mname":"M.","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T001\/img_687e483572d703.99652106.jpg","accid":"1","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T00100","Fname":"Aris Kwong","Mname":"Sheng","Lname":"Diego","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"42","email":"arisdiegosml@gmail.com","status":"Active","role":"Teacher"},{"ID":"T002","Fname":"Maria Selene","Mname":"G.","Lname":"Reyes","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"2","email":"alanbradbalarag@gmail.com","status":"Active","role":"Teacher"},{"ID":"T003","Fname":"Jose","Mname":"L.","Lname":"Santos","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"3","email":"admin1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T004","Fname":"Ana","Mname":"P.","Lname":"Garcia","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"4","email":"shawnbulos03d@gmail.com","status":"Active","role":"Teacher"},{"ID":"T005","Fname":"Pedro","Mname":"B.","Lname":"Lopez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"5","email":"buloss012@gmail.com","status":"Active","role":"Teacher"},{"ID":"T006","Fname":"Luisa","Mname":"R.","Lname":"Mendoza","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"6","email":"ryzen1520@gmail.com","status":"Active","role":"Teacher"},{"ID":"T007","Fname":"Carlos","Mname":"D.","Lname":"Torres","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"7","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T008","Fname":"Isabel","Mname":"A.","Lname":"Ramos","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T008\/img_68fb0b6eafe952.90730171.jpg","accid":"8","email":"teacher2@gmail.com","status":"Active","role":"Teacher"},{"ID":"T009","Fname":"Ramon","Mname":"F.","Lname":"Cruz","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"9","email":"teacher3@gmail.com","status":"Active","role":"Teacher"},{"ID":"T010","Fname":"Elena","Mname":"C.","Lname":"Bautista","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"10","email":"teacher4@gmail.com","status":"Active","role":"Teacher"},{"ID":"T011","Fname":"Arnold","Mname":"J.","Lname":"Navarro","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T011\/img_68fb0b41093400.82802876.jpg","accid":"11","email":"teacher5@gmail.com","status":"Active","role":"Teacher"},{"ID":"T012","Fname":"Lorna","Mname":"E.","Lname":"Domingo","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"12","email":"teacher6@gmail.com","status":"Active","role":"Teacher"},{"ID":"T013","Fname":"Dennis","Mname":"V.","Lname":"Aquino","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"13","email":"teacher7@gmail.com","status":"Active","role":"Teacher"},{"ID":"T014","Fname":"Sheila","Mname":"K.","Lname":"Villanueva","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"14","email":"teacher8@gmail.com","status":"Active","role":"Teacher"},{"ID":"T015","Fname":"Nestor","Mname":"Q.","Lname":"Salvador","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"15","email":"teacher9@gmail.com","status":"Active","role":"Teacher"},{"ID":"T016","Fname":"Jenny","Mname":"Z.","Lname":"Fernandez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"16","email":"teacher10@gmail.com","status":"Active","role":"Teacher"},{"ID":"T017","Fname":"harry","Mname":"michael","Lname":"rei","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"23","email":"buloss0122@gmail.com","status":"Active","role":"Teacher"},{"ID":"T018","Fname":"tine","Mname":"mendez","Lname":"cabang","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"25","email":"ryzen12312@gmail.com","status":"Active","role":"Teacher"},{"ID":"T19","Fname":"harry","Mname":"asd","Lname":"asd","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"28","email":"teacher19@gmail.com","status":"Active","role":"Teacher"},{"ID":"P001","Fname":"Melva","Mname":"C","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"","accid":"45","email":"MelbaDelaCruz@gmail.com","status":"Active","role":"Principal"}]
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getEvaluationAverageByGrade","SchoolYearID":"1","GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":"1","GradeLevel":"All","QID":1}
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6}]
+[{"CatID":1,"CategoryName":"Respect","AvgScore":3},{"CatID":2,"CategoryName":"Communication","AvgScore":3.7},{"CatID":3,"CategoryName":"Preparedness","AvgScore":2.6},{"CatID":4,"CategoryName":"Time Management","AvgScore":3.4},{"CatID":5,"CategoryName":"Participation","AvgScore":2.6},{"CatID":6,"CategoryName":"Feedback","AvgScore":2.9}]
+3
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":"6","GradeLevel":"All","QID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":"6","GradeLevel":"All","QID":1}
+0
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+Request Data: {"action":"getUserAccount"}
+Response Data: [{"ID":"s2025-2002523","Fname":"Lyndon ","Mname":"leonora","Lname":"cabang","Grade":"10","YearSec":"8","Section":"St. Veronica","image":"\/user.png","accid":"38","email":"sharmainepagador@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252","Fname":"Lyndon","Mname":"asd","Lname":"Cabang","Grade":"10","YearSec":"7","Section":"St. Joseph","image":"\/user.png","accid":"39","email":"lyndoncabang@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025232","Fname":"Takte","Mname":"Ka","Lname":"Boss","Grade":"9","YearSec":"5","Section":"St. Therese","image":"\/user.png","accid":"40","email":"shisalleva27@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252323","Fname":"Shawn","Mname":"michael","Lname":"Dela Cruz","Grade":"7","YearSec":"1","Section":"St. Peter","image":"StudentProfile\/s2025-200252323\/img_68d39a1b5e4514.23839369.jpg","accid":"41","email":"arisdiegoml@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025sd","Fname":"harry","Mname":"leonora","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"47","email":"sakuragih805@gmail.com","status":"Active","role":"Student"},{"ID":"asd","Fname":"harry","Mname":"leonora","Lname":"asd","Grade":"7","YearSec":"2","Section":"St. Paul","image":"\/user.png","accid":"48","email":"shawnbulos033@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002522323","Fname":"Shawn","Mname":"Rei","Lname":"Bulos","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"49","email":"shawnbulos0333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523233","Fname":"Gol","Mname":"D","Lname":"Roger","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"52","email":"shawnbulos03333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025223","Fname":"Joseph","Mname":"A","Lname":"Capule","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"62","email":"josephbryan@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-2002512312","Fname":"Shawn","Mname":"leonora","Lname":"teresa","Grade":"7","YearSec":"1","Section":"St. Peter","image":"\/user.png","accid":"63","email":"shawnbulos033333@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-20025223323","Fname":"Raizen","Mname":"Rei","Lname":"Raizen","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"64","email":"shawnbulos0333333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025","Fname":"Shawn","Mname":"Michael","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"StudentProfile\/s2025-20025\/img_68edf0a6b53504.78926408.jpg","accid":"37","email":"shawnbulos03@gmail.com","status":"Active","role":"Student"},{"ID":"T001","Fname":"Juan","Mname":"M.","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T001\/img_687e483572d703.99652106.jpg","accid":"1","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T00100","Fname":"Aris Kwong","Mname":"Sheng","Lname":"Diego","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"42","email":"arisdiegosml@gmail.com","status":"Active","role":"Teacher"},{"ID":"T002","Fname":"Maria Selene","Mname":"G.","Lname":"Reyes","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"2","email":"alanbradbalarag@gmail.com","status":"Active","role":"Teacher"},{"ID":"T003","Fname":"Jose","Mname":"L.","Lname":"Santos","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"3","email":"admin1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T004","Fname":"Ana","Mname":"P.","Lname":"Garcia","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"4","email":"shawnbulos03d@gmail.com","status":"Active","role":"Teacher"},{"ID":"T005","Fname":"Pedro","Mname":"B.","Lname":"Lopez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"5","email":"buloss012@gmail.com","status":"Active","role":"Teacher"},{"ID":"T006","Fname":"Luisa","Mname":"R.","Lname":"Mendoza","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"6","email":"ryzen1520@gmail.com","status":"Active","role":"Teacher"},{"ID":"T007","Fname":"Carlos","Mname":"D.","Lname":"Torres","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"7","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T008","Fname":"Isabel","Mname":"A.","Lname":"Ramos","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T008\/img_68fb0b6eafe952.90730171.jpg","accid":"8","email":"teacher2@gmail.com","status":"Active","role":"Teacher"},{"ID":"T009","Fname":"Ramon","Mname":"F.","Lname":"Cruz","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"9","email":"teacher3@gmail.com","status":"Active","role":"Teacher"},{"ID":"T010","Fname":"Elena","Mname":"C.","Lname":"Bautista","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"10","email":"teacher4@gmail.com","status":"Active","role":"Teacher"},{"ID":"T011","Fname":"Arnold","Mname":"J.","Lname":"Navarro","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T011\/img_68fb0b41093400.82802876.jpg","accid":"11","email":"teacher5@gmail.com","status":"Active","role":"Teacher"},{"ID":"T012","Fname":"Lorna","Mname":"E.","Lname":"Domingo","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"12","email":"teacher6@gmail.com","status":"Active","role":"Teacher"},{"ID":"T013","Fname":"Dennis","Mname":"V.","Lname":"Aquino","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"13","email":"teacher7@gmail.com","status":"Active","role":"Teacher"},{"ID":"T014","Fname":"Sheila","Mname":"K.","Lname":"Villanueva","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"14","email":"teacher8@gmail.com","status":"Active","role":"Teacher"},{"ID":"T015","Fname":"Nestor","Mname":"Q.","Lname":"Salvador","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"15","email":"teacher9@gmail.com","status":"Active","role":"Teacher"},{"ID":"T016","Fname":"Jenny","Mname":"Z.","Lname":"Fernandez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"16","email":"teacher10@gmail.com","status":"Active","role":"Teacher"},{"ID":"T017","Fname":"harry","Mname":"michael","Lname":"rei","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"23","email":"buloss0122@gmail.com","status":"Active","role":"Teacher"},{"ID":"T018","Fname":"tine","Mname":"mendez","Lname":"cabang","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"25","email":"ryzen12312@gmail.com","status":"Active","role":"Teacher"},{"ID":"T19","Fname":"harry","Mname":"asd","Lname":"asd","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"28","email":"teacher19@gmail.com","status":"Active","role":"Teacher"},{"ID":"P001","Fname":"Melva","Mname":"C","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"","accid":"45","email":"MelbaDelaCruz@gmail.com","status":"Active","role":"Principal"}]
+{"action":"createSchedule","schedule":{"title":"Test2026-2027","questionnaireID":"6","startDate":"2026-07-11","endDate":"2026-07-13","status":"Active","targetGrades":["Grade 7","Grade 8"],"schoolYearID":{"SchoolYearID":6},"adminID":3,"Admin":"John Michael Doe","AccID":65}}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getTeacherResponseCount","TeacherID":"T001","SchoolYearID":6}
+[]
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T001",
+    "subjectID": 9,
+    "schoolYearID": 6
+}
+{"action":"checkIfEvaluated","teacherID":"T001","subjectID":9,"schoolYearID":6}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T001",
+    "subjectID": 9,
+    "schoolYearID": 6
+}
+{"action":"checkIfEvaluated","teacherID":"T001","subjectID":9,"schoolYearID":6}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+{
+    "action": "submitEvaluation",
+    "StudID": "s2025-20025",
+    "TeacherID": "T001",
+    "SubjectID": 9,
+    "ESetID": 83,
+    "SchoolYearID": 6,
+    "answers": {
+        "2": {
+            "41": 4,
+            "43": "sad",
+            "50": 4
+        }
+    },
+    "Optionalanswers": {
+        "2": []
+    },
+    "Student": "Shawn Michael Bulos",
+    "AccID": 37
+}
+{"action":"getHighestCategory","TeacherID":"T001","SchoolYearID":6}
+Request Data: {"action":"getUserAccount"}
+Response Data: [{"ID":"s2025-2002523","Fname":"Lyndon ","Mname":"leonora","Lname":"cabang","Grade":"10","YearSec":"8","Section":"St. Veronica","image":"\/user.png","accid":"38","email":"sharmainepagador@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252","Fname":"Lyndon","Mname":"asd","Lname":"Cabang","Grade":"10","YearSec":"7","Section":"St. Joseph","image":"\/user.png","accid":"39","email":"lyndoncabang@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025232","Fname":"Takte","Mname":"Ka","Lname":"Boss","Grade":"9","YearSec":"5","Section":"St. Therese","image":"\/user.png","accid":"40","email":"shisalleva27@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252323","Fname":"Shawn","Mname":"michael","Lname":"Dela Cruz","Grade":"7","YearSec":"1","Section":"St. Peter","image":"StudentProfile\/s2025-200252323\/img_68d39a1b5e4514.23839369.jpg","accid":"41","email":"arisdiegoml@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025sd","Fname":"harry","Mname":"leonora","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"47","email":"sakuragih805@gmail.com","status":"Active","role":"Student"},{"ID":"asd","Fname":"harry","Mname":"leonora","Lname":"asd","Grade":"7","YearSec":"2","Section":"St. Paul","image":"\/user.png","accid":"48","email":"shawnbulos033@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002522323","Fname":"Shawn","Mname":"Rei","Lname":"Bulos","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"49","email":"shawnbulos0333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523233","Fname":"Gol","Mname":"D","Lname":"Roger","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"52","email":"shawnbulos03333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025223","Fname":"Joseph","Mname":"A","Lname":"Capule","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"62","email":"josephbryan@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-2002512312","Fname":"Shawn","Mname":"leonora","Lname":"teresa","Grade":"7","YearSec":"1","Section":"St. Peter","image":"\/user.png","accid":"63","email":"shawnbulos033333@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-20025223323","Fname":"Raizen","Mname":"Rei","Lname":"Raizen","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"64","email":"shawnbulos0333333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025","Fname":"Shawn","Mname":"Michael","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"StudentProfile\/s2025-20025\/img_68edf0a6b53504.78926408.jpg","accid":"37","email":"shawnbulos03@gmail.com","status":"Active","role":"Student"},{"ID":"T001","Fname":"Juan","Mname":"M.","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T001\/img_687e483572d703.99652106.jpg","accid":"1","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T00100","Fname":"Aris Kwong","Mname":"Sheng","Lname":"Diego","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"42","email":"arisdiegosml@gmail.com","status":"Active","role":"Teacher"},{"ID":"T002","Fname":"Maria Selene","Mname":"G.","Lname":"Reyes","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"2","email":"alanbradbalarag@gmail.com","status":"Active","role":"Teacher"},{"ID":"T003","Fname":"Jose","Mname":"L.","Lname":"Santos","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"3","email":"admin1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T004","Fname":"Ana","Mname":"P.","Lname":"Garcia","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"4","email":"shawnbulos03d@gmail.com","status":"Active","role":"Teacher"},{"ID":"T005","Fname":"Pedro","Mname":"B.","Lname":"Lopez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"5","email":"buloss012@gmail.com","status":"Active","role":"Teacher"},{"ID":"T006","Fname":"Luisa","Mname":"R.","Lname":"Mendoza","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"6","email":"ryzen1520@gmail.com","status":"Active","role":"Teacher"},{"ID":"T007","Fname":"Carlos","Mname":"D.","Lname":"Torres","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"7","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T008","Fname":"Isabel","Mname":"A.","Lname":"Ramos","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T008\/img_68fb0b6eafe952.90730171.jpg","accid":"8","email":"teacher2@gmail.com","status":"Active","role":"Teacher"},{"ID":"T009","Fname":"Ramon","Mname":"F.","Lname":"Cruz","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"9","email":"teacher3@gmail.com","status":"Active","role":"Teacher"},{"ID":"T010","Fname":"Elena","Mname":"C.","Lname":"Bautista","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"10","email":"teacher4@gmail.com","status":"Active","role":"Teacher"},{"ID":"T011","Fname":"Arnold","Mname":"J.","Lname":"Navarro","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T011\/img_68fb0b41093400.82802876.jpg","accid":"11","email":"teacher5@gmail.com","status":"Active","role":"Teacher"},{"ID":"T012","Fname":"Lorna","Mname":"E.","Lname":"Domingo","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"12","email":"teacher6@gmail.com","status":"Active","role":"Teacher"},{"ID":"T013","Fname":"Dennis","Mname":"V.","Lname":"Aquino","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"13","email":"teacher7@gmail.com","status":"Active","role":"Teacher"},{"ID":"T014","Fname":"Sheila","Mname":"K.","Lname":"Villanueva","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"14","email":"teacher8@gmail.com","status":"Active","role":"Teacher"},{"ID":"T015","Fname":"Nestor","Mname":"Q.","Lname":"Salvador","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"15","email":"teacher9@gmail.com","status":"Active","role":"Teacher"},{"ID":"T016","Fname":"Jenny","Mname":"Z.","Lname":"Fernandez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"16","email":"teacher10@gmail.com","status":"Active","role":"Teacher"},{"ID":"T017","Fname":"harry","Mname":"michael","Lname":"rei","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"23","email":"buloss0122@gmail.com","status":"Active","role":"Teacher"},{"ID":"T018","Fname":"tine","Mname":"mendez","Lname":"cabang","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"25","email":"ryzen12312@gmail.com","status":"Active","role":"Teacher"},{"ID":"T19","Fname":"harry","Mname":"asd","Lname":"asd","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"28","email":"teacher19@gmail.com","status":"Active","role":"Teacher"},{"ID":"P001","Fname":"Melva","Mname":"C","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"","accid":"45","email":"MelbaDelaCruz@gmail.com","status":"Active","role":"Principal"}]
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getTeacherResponseCount","TeacherID":"T001","SchoolYearID":6}
+[{"TeacherID":"T001","TeacherName":"Juan Dela Cruz","catID":2,"categoryName":"Communication","SchoolYearID":6,"AvgScore":"4.0","Feedbacks":"sad || sad"}]
+{"action":"getHighestCategory","TeacherID":"T001","SchoolYearID":6}
+Request Data: {"action":"getUserAccount"}
+Response Data: [{"ID":"s2025-2002523","Fname":"Lyndon ","Mname":"leonora","Lname":"cabang","Grade":"10","YearSec":"8","Section":"St. Veronica","image":"\/user.png","accid":"38","email":"sharmainepagador@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252","Fname":"Lyndon","Mname":"asd","Lname":"Cabang","Grade":"10","YearSec":"7","Section":"St. Joseph","image":"\/user.png","accid":"39","email":"lyndoncabang@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025232","Fname":"Takte","Mname":"Ka","Lname":"Boss","Grade":"9","YearSec":"5","Section":"St. Therese","image":"\/user.png","accid":"40","email":"shisalleva27@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252323","Fname":"Shawn","Mname":"michael","Lname":"Dela Cruz","Grade":"7","YearSec":"1","Section":"St. Peter","image":"StudentProfile\/s2025-200252323\/img_68d39a1b5e4514.23839369.jpg","accid":"41","email":"arisdiegoml@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025sd","Fname":"harry","Mname":"leonora","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"47","email":"sakuragih805@gmail.com","status":"Active","role":"Student"},{"ID":"asd","Fname":"harry","Mname":"leonora","Lname":"asd","Grade":"7","YearSec":"2","Section":"St. Paul","image":"\/user.png","accid":"48","email":"shawnbulos033@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002522323","Fname":"Shawn","Mname":"Rei","Lname":"Bulos","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"49","email":"shawnbulos0333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523233","Fname":"Gol","Mname":"D","Lname":"Roger","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"52","email":"shawnbulos03333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025223","Fname":"Joseph","Mname":"A","Lname":"Capule","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"62","email":"josephbryan@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-2002512312","Fname":"Shawn","Mname":"leonora","Lname":"teresa","Grade":"7","YearSec":"1","Section":"St. Peter","image":"\/user.png","accid":"63","email":"shawnbulos033333@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-20025223323","Fname":"Raizen","Mname":"Rei","Lname":"Raizen","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"64","email":"shawnbulos0333333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025","Fname":"Shawn","Mname":"Michael","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"StudentProfile\/s2025-20025\/img_68edf0a6b53504.78926408.jpg","accid":"37","email":"shawnbulos03@gmail.com","status":"Active","role":"Student"},{"ID":"T001","Fname":"Juan","Mname":"M.","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T001\/img_687e483572d703.99652106.jpg","accid":"1","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T00100","Fname":"Aris Kwong","Mname":"Sheng","Lname":"Diego","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"42","email":"arisdiegosml@gmail.com","status":"Active","role":"Teacher"},{"ID":"T002","Fname":"Maria Selene","Mname":"G.","Lname":"Reyes","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"2","email":"alanbradbalarag@gmail.com","status":"Active","role":"Teacher"},{"ID":"T003","Fname":"Jose","Mname":"L.","Lname":"Santos","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"3","email":"admin1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T004","Fname":"Ana","Mname":"P.","Lname":"Garcia","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"4","email":"shawnbulos03d@gmail.com","status":"Active","role":"Teacher"},{"ID":"T005","Fname":"Pedro","Mname":"B.","Lname":"Lopez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"5","email":"buloss012@gmail.com","status":"Active","role":"Teacher"},{"ID":"T006","Fname":"Luisa","Mname":"R.","Lname":"Mendoza","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"6","email":"ryzen1520@gmail.com","status":"Active","role":"Teacher"},{"ID":"T007","Fname":"Carlos","Mname":"D.","Lname":"Torres","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"7","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T008","Fname":"Isabel","Mname":"A.","Lname":"Ramos","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T008\/img_68fb0b6eafe952.90730171.jpg","accid":"8","email":"teacher2@gmail.com","status":"Active","role":"Teacher"},{"ID":"T009","Fname":"Ramon","Mname":"F.","Lname":"Cruz","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"9","email":"teacher3@gmail.com","status":"Active","role":"Teacher"},{"ID":"T010","Fname":"Elena","Mname":"C.","Lname":"Bautista","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"10","email":"teacher4@gmail.com","status":"Active","role":"Teacher"},{"ID":"T011","Fname":"Arnold","Mname":"J.","Lname":"Navarro","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T011\/img_68fb0b41093400.82802876.jpg","accid":"11","email":"teacher5@gmail.com","status":"Active","role":"Teacher"},{"ID":"T012","Fname":"Lorna","Mname":"E.","Lname":"Domingo","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"12","email":"teacher6@gmail.com","status":"Active","role":"Teacher"},{"ID":"T013","Fname":"Dennis","Mname":"V.","Lname":"Aquino","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"13","email":"teacher7@gmail.com","status":"Active","role":"Teacher"},{"ID":"T014","Fname":"Sheila","Mname":"K.","Lname":"Villanueva","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"14","email":"teacher8@gmail.com","status":"Active","role":"Teacher"},{"ID":"T015","Fname":"Nestor","Mname":"Q.","Lname":"Salvador","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"15","email":"teacher9@gmail.com","status":"Active","role":"Teacher"},{"ID":"T016","Fname":"Jenny","Mname":"Z.","Lname":"Fernandez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"16","email":"teacher10@gmail.com","status":"Active","role":"Teacher"},{"ID":"T017","Fname":"harry","Mname":"michael","Lname":"rei","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"23","email":"buloss0122@gmail.com","status":"Active","role":"Teacher"},{"ID":"T018","Fname":"tine","Mname":"mendez","Lname":"cabang","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"25","email":"ryzen12312@gmail.com","status":"Active","role":"Teacher"},{"ID":"T19","Fname":"harry","Mname":"asd","Lname":"asd","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"28","email":"teacher19@gmail.com","status":"Active","role":"Teacher"},{"ID":"P001","Fname":"Melva","Mname":"C","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"","accid":"45","email":"MelbaDelaCruz@gmail.com","status":"Active","role":"Principal"}]
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+Request Data: {"action":"getUserAccount"}
+Response Data: [{"ID":"s2025-2002523","Fname":"Lyndon ","Mname":"leonora","Lname":"cabang","Grade":"10","YearSec":"8","Section":"St. Veronica","image":"\/user.png","accid":"38","email":"sharmainepagador@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252","Fname":"Lyndon","Mname":"asd","Lname":"Cabang","Grade":"10","YearSec":"7","Section":"St. Joseph","image":"\/user.png","accid":"39","email":"lyndoncabang@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025232","Fname":"Takte","Mname":"Ka","Lname":"Boss","Grade":"9","YearSec":"5","Section":"St. Therese","image":"\/user.png","accid":"40","email":"shisalleva27@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252323","Fname":"Shawn","Mname":"michael","Lname":"Dela Cruz","Grade":"7","YearSec":"1","Section":"St. Peter","image":"StudentProfile\/s2025-200252323\/img_68d39a1b5e4514.23839369.jpg","accid":"41","email":"arisdiegoml@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025sd","Fname":"harry","Mname":"leonora","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"47","email":"sakuragih805@gmail.com","status":"Active","role":"Student"},{"ID":"asd","Fname":"harry","Mname":"leonora","Lname":"asd","Grade":"7","YearSec":"2","Section":"St. Paul","image":"\/user.png","accid":"48","email":"shawnbulos033@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002522323","Fname":"Shawn","Mname":"Rei","Lname":"Bulos","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"49","email":"shawnbulos0333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523233","Fname":"Gol","Mname":"D","Lname":"Roger","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"52","email":"shawnbulos03333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025223","Fname":"Joseph","Mname":"A","Lname":"Capule","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"62","email":"josephbryan@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-2002512312","Fname":"Shawn","Mname":"leonora","Lname":"teresa","Grade":"7","YearSec":"1","Section":"St. Peter","image":"\/user.png","accid":"63","email":"shawnbulos033333@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-20025223323","Fname":"Raizen","Mname":"Rei","Lname":"Raizen","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"64","email":"shawnbulos0333333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025","Fname":"Shawn","Mname":"Michael","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"StudentProfile\/s2025-20025\/img_68edf0a6b53504.78926408.jpg","accid":"37","email":"shawnbulos03@gmail.com","status":"Active","role":"Student"},{"ID":"T001","Fname":"Juan","Mname":"M.","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T001\/img_687e483572d703.99652106.jpg","accid":"1","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T00100","Fname":"Aris Kwong","Mname":"Sheng","Lname":"Diego","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"42","email":"arisdiegosml@gmail.com","status":"Active","role":"Teacher"},{"ID":"T002","Fname":"Maria Selene","Mname":"G.","Lname":"Reyes","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"2","email":"alanbradbalarag@gmail.com","status":"Active","role":"Teacher"},{"ID":"T003","Fname":"Jose","Mname":"L.","Lname":"Santos","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"3","email":"admin1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T004","Fname":"Ana","Mname":"P.","Lname":"Garcia","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"4","email":"shawnbulos03d@gmail.com","status":"Active","role":"Teacher"},{"ID":"T005","Fname":"Pedro","Mname":"B.","Lname":"Lopez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"5","email":"buloss012@gmail.com","status":"Active","role":"Teacher"},{"ID":"T006","Fname":"Luisa","Mname":"R.","Lname":"Mendoza","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"6","email":"ryzen1520@gmail.com","status":"Active","role":"Teacher"},{"ID":"T007","Fname":"Carlos","Mname":"D.","Lname":"Torres","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"7","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T008","Fname":"Isabel","Mname":"A.","Lname":"Ramos","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T008\/img_68fb0b6eafe952.90730171.jpg","accid":"8","email":"teacher2@gmail.com","status":"Active","role":"Teacher"},{"ID":"T009","Fname":"Ramon","Mname":"F.","Lname":"Cruz","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"9","email":"teacher3@gmail.com","status":"Active","role":"Teacher"},{"ID":"T010","Fname":"Elena","Mname":"C.","Lname":"Bautista","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"10","email":"teacher4@gmail.com","status":"Active","role":"Teacher"},{"ID":"T011","Fname":"Arnold","Mname":"J.","Lname":"Navarro","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T011\/img_68fb0b41093400.82802876.jpg","accid":"11","email":"teacher5@gmail.com","status":"Active","role":"Teacher"},{"ID":"T012","Fname":"Lorna","Mname":"E.","Lname":"Domingo","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"12","email":"teacher6@gmail.com","status":"Active","role":"Teacher"},{"ID":"T013","Fname":"Dennis","Mname":"V.","Lname":"Aquino","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"13","email":"teacher7@gmail.com","status":"Active","role":"Teacher"},{"ID":"T014","Fname":"Sheila","Mname":"K.","Lname":"Villanueva","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"14","email":"teacher8@gmail.com","status":"Active","role":"Teacher"},{"ID":"T015","Fname":"Nestor","Mname":"Q.","Lname":"Salvador","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"15","email":"teacher9@gmail.com","status":"Active","role":"Teacher"},{"ID":"T016","Fname":"Jenny","Mname":"Z.","Lname":"Fernandez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"16","email":"teacher10@gmail.com","status":"Active","role":"Teacher"},{"ID":"T017","Fname":"harry","Mname":"michael","Lname":"rei","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"23","email":"buloss0122@gmail.com","status":"Active","role":"Teacher"},{"ID":"T018","Fname":"tine","Mname":"mendez","Lname":"cabang","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"25","email":"ryzen12312@gmail.com","status":"Active","role":"Teacher"},{"ID":"T19","Fname":"harry","Mname":"asd","Lname":"asd","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"28","email":"teacher19@gmail.com","status":"Active","role":"Teacher"},{"ID":"P001","Fname":"Melva","Mname":"C","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"","accid":"45","email":"MelbaDelaCruz@gmail.com","status":"Active","role":"Principal"}]
+{"action":"getHighestCategory","TeacherID":"T001","SchoolYearID":6}
+{"action":"getTeacherResponseCount","TeacherID":"T013","SchoolYearID":6}
+[]
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 7,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":7,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 25,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":25,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 14,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":14,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 12,
+    "schoolYearID": 6
+}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":12,"schoolYearID":6}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 14,
+    "schoolYearID": 1
+}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 25,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":14,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 7,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":7,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 25,
+    "schoolYearID": 1
+}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 12,
+    "schoolYearID": 6
+}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":25,"schoolYearID":1}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":12,"schoolYearID":6}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 7,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":7,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 14,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":14,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T013",
+    "subjectID": 10,
+    "schoolYearID": 6
+}
+{"action":"checkIfEvaluated","teacherID":"T013","subjectID":10,"schoolYearID":6}
+{"action":"getTeacherResponseCount","TeacherID":"T011","SchoolYearID":6}
+[]
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 17,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":17,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 6,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":6,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 7,
+    "schoolYearID": 1
+}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 6,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":7,"schoolYearID":1}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":5,"schoolYearID":1}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":6,"schoolYearID":1}
+,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":28,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 10,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":5,"schoolYearID":1}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":10,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 13,
+    "schoolYearID": 1
+}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 16,
+    "schoolYearID": 1
+}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 2,
+    "schoolYearID": 1
+}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 10,
+    "schoolYearID": 1
+}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 11,
+    "schoolYearID": 1
+}
+ed","teacherID":"T011","subjectID":2,"schoolYearID":1}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":10,"schoolYearID":1}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":11,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 12,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":12,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 15,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":15,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 6,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":6,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 5,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":5,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 5,
+    "schoolYearID": 1
+}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 7,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":5,"schoolYearID":1}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":7,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 4,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":4,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 6,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":6,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 28,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":28,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 13,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":13,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 10,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":10,"schoolYearID":1}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":2,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 12,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":12,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 11,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":16,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 10,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":11,"schoolYearID":1}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":10,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 15,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":15,"schoolYearID":1}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 11,
+    "schoolYearID": 6
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":11,"schoolYearID":6}
+{
+    "action": "checkIfEvaluated",
+    "teacherID": "T011",
+    "subjectID": 17,
+    "schoolYearID": 1
+}
+{"action":"checkIfEvaluated","teacherID":"T011","subjectID":17,"schoolYearID":1}
+{
+    "action": "submitEvaluation",
+    "StudID": "s2025-20025",
+    "TeacherID": "T013",
+    "SubjectID": 10,
+    "ESetID": 83,
+    "SchoolYearID": 6,
+    "answers": {
+        "2": {
+            "41": 4,
+            "43": "wala",
+            "50": 4
+        }
+    },
+    "Optionalanswers": {
+        "2": []
+    },
+    "Student": "Shawn Michael Bulos",
+    "AccID": 37
+}
+{
+    "action": "submitEvaluation",
+    "StudID": "s2025-20025",
+    "TeacherID": "T011",
+    "SubjectID": 11,
+    "ESetID": 83,
+    "SchoolYearID": 6,
+    "answers": {
+        "2": {
+            "41": 3,
+            "43": "Raizenb",
+            "50": 3
+        }
+    },
+    "Optionalanswers": {
+        "2": []
+    },
+    "Student": "Shawn Michael Bulos",
+    "AccID": 37
+}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":6}
+{"action":"getHighestCategory","TeacherID":"T001","SchoolYearID":6}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":6}
+{"action":"getHighestCategory","TeacherID":"T001","SchoolYearID":6}
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+Request Data: {"action":"getUserAccount"}
+Response Data: [{"ID":"s2025-2002523","Fname":"Lyndon ","Mname":"leonora","Lname":"cabang","Grade":"10","YearSec":"8","Section":"St. Veronica","image":"\/user.png","accid":"38","email":"sharmainepagador@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252","Fname":"Lyndon","Mname":"asd","Lname":"Cabang","Grade":"10","YearSec":"7","Section":"St. Joseph","image":"\/user.png","accid":"39","email":"lyndoncabang@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025232","Fname":"Takte","Mname":"Ka","Lname":"Boss","Grade":"9","YearSec":"5","Section":"St. Therese","image":"\/user.png","accid":"40","email":"shisalleva27@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252323","Fname":"Shawn","Mname":"michael","Lname":"Dela Cruz","Grade":"7","YearSec":"1","Section":"St. Peter","image":"StudentProfile\/s2025-200252323\/img_68d39a1b5e4514.23839369.jpg","accid":"41","email":"arisdiegoml@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025sd","Fname":"harry","Mname":"leonora","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"47","email":"sakuragih805@gmail.com","status":"Active","role":"Student"},{"ID":"asd","Fname":"harry","Mname":"leonora","Lname":"asd","Grade":"7","YearSec":"2","Section":"St. Paul","image":"\/user.png","accid":"48","email":"shawnbulos033@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002522323","Fname":"Shawn","Mname":"Rei","Lname":"Bulos","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"49","email":"shawnbulos0333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523233","Fname":"Gol","Mname":"D","Lname":"Roger","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"52","email":"shawnbulos03333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025223","Fname":"Joseph","Mname":"A","Lname":"Capule","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"62","email":"josephbryan@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-2002512312","Fname":"Shawn","Mname":"leonora","Lname":"teresa","Grade":"7","YearSec":"1","Section":"St. Peter","image":"\/user.png","accid":"63","email":"shawnbulos033333@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-20025223323","Fname":"Raizen","Mname":"Rei","Lname":"Raizen","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"64","email":"shawnbulos0333333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025","Fname":"Shawn","Mname":"Michael","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"StudentProfile\/s2025-20025\/img_68edf0a6b53504.78926408.jpg","accid":"37","email":"shawnbulos03@gmail.com","status":"Active","role":"Student"},{"ID":"T001","Fname":"Juan","Mname":"M.","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T001\/img_687e483572d703.99652106.jpg","accid":"1","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T00100","Fname":"Aris Kwong","Mname":"Sheng","Lname":"Diego","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"42","email":"arisdiegosml@gmail.com","status":"Active","role":"Teacher"},{"ID":"T002","Fname":"Maria Selene","Mname":"G.","Lname":"Reyes","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"2","email":"alanbradbalarag@gmail.com","status":"Active","role":"Teacher"},{"ID":"T003","Fname":"Jose","Mname":"L.","Lname":"Santos","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"3","email":"admin1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T004","Fname":"Ana","Mname":"P.","Lname":"Garcia","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"4","email":"shawnbulos03d@gmail.com","status":"Active","role":"Teacher"},{"ID":"T005","Fname":"Pedro","Mname":"B.","Lname":"Lopez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"5","email":"buloss012@gmail.com","status":"Active","role":"Teacher"},{"ID":"T006","Fname":"Luisa","Mname":"R.","Lname":"Mendoza","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"6","email":"ryzen1520@gmail.com","status":"Active","role":"Teacher"},{"ID":"T007","Fname":"Carlos","Mname":"D.","Lname":"Torres","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"7","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T008","Fname":"Isabel","Mname":"A.","Lname":"Ramos","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T008\/img_68fb0b6eafe952.90730171.jpg","accid":"8","email":"teacher2@gmail.com","status":"Active","role":"Teacher"},{"ID":"T009","Fname":"Ramon","Mname":"F.","Lname":"Cruz","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"9","email":"teacher3@gmail.com","status":"Active","role":"Teacher"},{"ID":"T010","Fname":"Elena","Mname":"C.","Lname":"Bautista","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"10","email":"teacher4@gmail.com","status":"Active","role":"Teacher"},{"ID":"T011","Fname":"Arnold","Mname":"J.","Lname":"Navarro","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T011\/img_68fb0b41093400.82802876.jpg","accid":"11","email":"teacher5@gmail.com","status":"Active","role":"Teacher"},{"ID":"T012","Fname":"Lorna","Mname":"E.","Lname":"Domingo","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"12","email":"teacher6@gmail.com","status":"Active","role":"Teacher"},{"ID":"T013","Fname":"Dennis","Mname":"V.","Lname":"Aquino","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"13","email":"teacher7@gmail.com","status":"Active","role":"Teacher"},{"ID":"T014","Fname":"Sheila","Mname":"K.","Lname":"Villanueva","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"14","email":"teacher8@gmail.com","status":"Active","role":"Teacher"},{"ID":"T015","Fname":"Nestor","Mname":"Q.","Lname":"Salvador","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"15","email":"teacher9@gmail.com","status":"Active","role":"Teacher"},{"ID":"T016","Fname":"Jenny","Mname":"Z.","Lname":"Fernandez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"16","email":"teacher10@gmail.com","status":"Active","role":"Teacher"},{"ID":"T017","Fname":"harry","Mname":"michael","Lname":"rei","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"23","email":"buloss0122@gmail.com","status":"Active","role":"Teacher"},{"ID":"T018","Fname":"tine","Mname":"mendez","Lname":"cabang","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"25","email":"ryzen12312@gmail.com","status":"Active","role":"Teacher"},{"ID":"T19","Fname":"harry","Mname":"asd","Lname":"asd","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"28","email":"teacher19@gmail.com","status":"Active","role":"Teacher"},{"ID":"P001","Fname":"Melva","Mname":"C","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"","accid":"45","email":"MelbaDelaCruz@gmail.com","status":"Active","role":"Principal"}]
+{
+    "action": "updateStudent",
+    "studid": "s2025-2002523",
+    "fname": "Lyndon ",
+    "mname": "leonora",
+    "lname": "cabang",
+    "grade": "10",
+    "section": "St. Veronica",
+    "status": 1,
+    "email": "sharmainepagadorr@gmail.com",
+    "accid": "38",
+    "password": "Raizen092103",
+    "Admin": "John Michael Doe",
+    "AccID": 65
+}
+ walang Nakuhang error  
+Active SchoolYearID: 6
+Checking enrollment for StudID=s2025-2002523, SchoolYearID=6
+No existing enrollment found — inserting new record.
+galing gumana.
+Request Data: {"action":"getUserAccount"}
+Response Data: [{"ID":"s2025-200252","Fname":"Lyndon","Mname":"asd","Lname":"Cabang","Grade":"10","YearSec":"7","Section":"St. Joseph","image":"\/user.png","accid":"39","email":"lyndoncabang@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025232","Fname":"Takte","Mname":"Ka","Lname":"Boss","Grade":"9","YearSec":"5","Section":"St. Therese","image":"\/user.png","accid":"40","email":"shisalleva27@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252323","Fname":"Shawn","Mname":"michael","Lname":"Dela Cruz","Grade":"7","YearSec":"1","Section":"St. Peter","image":"StudentProfile\/s2025-200252323\/img_68d39a1b5e4514.23839369.jpg","accid":"41","email":"arisdiegoml@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025sd","Fname":"harry","Mname":"leonora","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"47","email":"sakuragih805@gmail.com","status":"Active","role":"Student"},{"ID":"asd","Fname":"harry","Mname":"leonora","Lname":"asd","Grade":"7","YearSec":"2","Section":"St. Paul","image":"\/user.png","accid":"48","email":"shawnbulos033@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002522323","Fname":"Shawn","Mname":"Rei","Lname":"Bulos","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"49","email":"shawnbulos0333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523233","Fname":"Gol","Mname":"D","Lname":"Roger","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"52","email":"shawnbulos03333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025223","Fname":"Joseph","Mname":"A","Lname":"Capule","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"62","email":"josephbryan@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-2002512312","Fname":"Shawn","Mname":"leonora","Lname":"teresa","Grade":"7","YearSec":"1","Section":"St. Peter","image":"\/user.png","accid":"63","email":"shawnbulos033333@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-20025223323","Fname":"Raizen","Mname":"Rei","Lname":"Raizen","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"64","email":"shawnbulos0333333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025","Fname":"Shawn","Mname":"Michael","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"StudentProfile\/s2025-20025\/img_68edf0a6b53504.78926408.jpg","accid":"37","email":"shawnbulos03@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523","Fname":"Lyndon ","Mname":"leonora","Lname":"cabang","Grade":"10","YearSec":"8","Section":"St. Veronica","image":"\/user.png","accid":"38","email":"sharmainepagadorr@gmail.com","status":"Active","role":"Student"},{"ID":"T001","Fname":"Juan","Mname":"M.","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T001\/img_687e483572d703.99652106.jpg","accid":"1","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T00100","Fname":"Aris Kwong","Mname":"Sheng","Lname":"Diego","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"42","email":"arisdiegosml@gmail.com","status":"Active","role":"Teacher"},{"ID":"T002","Fname":"Maria Selene","Mname":"G.","Lname":"Reyes","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"2","email":"alanbradbalarag@gmail.com","status":"Active","role":"Teacher"},{"ID":"T003","Fname":"Jose","Mname":"L.","Lname":"Santos","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"3","email":"admin1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T004","Fname":"Ana","Mname":"P.","Lname":"Garcia","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"4","email":"shawnbulos03d@gmail.com","status":"Active","role":"Teacher"},{"ID":"T005","Fname":"Pedro","Mname":"B.","Lname":"Lopez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"5","email":"buloss012@gmail.com","status":"Active","role":"Teacher"},{"ID":"T006","Fname":"Luisa","Mname":"R.","Lname":"Mendoza","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"6","email":"ryzen1520@gmail.com","status":"Active","role":"Teacher"},{"ID":"T007","Fname":"Carlos","Mname":"D.","Lname":"Torres","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"7","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T008","Fname":"Isabel","Mname":"A.","Lname":"Ramos","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T008\/img_68fb0b6eafe952.90730171.jpg","accid":"8","email":"teacher2@gmail.com","status":"Active","role":"Teacher"},{"ID":"T009","Fname":"Ramon","Mname":"F.","Lname":"Cruz","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"9","email":"teacher3@gmail.com","status":"Active","role":"Teacher"},{"ID":"T010","Fname":"Elena","Mname":"C.","Lname":"Bautista","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"10","email":"teacher4@gmail.com","status":"Active","role":"Teacher"},{"ID":"T011","Fname":"Arnold","Mname":"J.","Lname":"Navarro","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T011\/img_68fb0b41093400.82802876.jpg","accid":"11","email":"teacher5@gmail.com","status":"Active","role":"Teacher"},{"ID":"T012","Fname":"Lorna","Mname":"E.","Lname":"Domingo","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"12","email":"teacher6@gmail.com","status":"Active","role":"Teacher"},{"ID":"T013","Fname":"Dennis","Mname":"V.","Lname":"Aquino","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"13","email":"teacher7@gmail.com","status":"Active","role":"Teacher"},{"ID":"T014","Fname":"Sheila","Mname":"K.","Lname":"Villanueva","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"14","email":"teacher8@gmail.com","status":"Active","role":"Teacher"},{"ID":"T015","Fname":"Nestor","Mname":"Q.","Lname":"Salvador","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"15","email":"teacher9@gmail.com","status":"Active","role":"Teacher"},{"ID":"T016","Fname":"Jenny","Mname":"Z.","Lname":"Fernandez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"16","email":"teacher10@gmail.com","status":"Active","role":"Teacher"},{"ID":"T017","Fname":"harry","Mname":"michael","Lname":"rei","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"23","email":"buloss0122@gmail.com","status":"Active","role":"Teacher"},{"ID":"T018","Fname":"tine","Mname":"mendez","Lname":"cabang","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"25","email":"ryzen12312@gmail.com","status":"Active","role":"Teacher"},{"ID":"T19","Fname":"harry","Mname":"asd","Lname":"asd","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"28","email":"teacher19@gmail.com","status":"Active","role":"Teacher"},{"ID":"P001","Fname":"Melva","Mname":"C","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"","accid":"45","email":"MelbaDelaCruz@gmail.com","status":"Active","role":"Principal"}]
+{"action":"getHighestCategory","TeacherID":"T001","SchoolYearID":6}
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":6}
+Request Data: {"action":"getUserAccount"}
+Response Data: [{"ID":"s2025-200252","Fname":"Lyndon","Mname":"asd","Lname":"Cabang","Grade":"10","YearSec":"7","Section":"St. Joseph","image":"\/user.png","accid":"39","email":"lyndoncabang@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025232","Fname":"Takte","Mname":"Ka","Lname":"Boss","Grade":"9","YearSec":"5","Section":"St. Therese","image":"\/user.png","accid":"40","email":"shisalleva27@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-200252323","Fname":"Shawn","Mname":"michael","Lname":"Dela Cruz","Grade":"7","YearSec":"1","Section":"St. Peter","image":"StudentProfile\/s2025-200252323\/img_68d39a1b5e4514.23839369.jpg","accid":"41","email":"arisdiegoml@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025sd","Fname":"harry","Mname":"leonora","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"47","email":"sakuragih805@gmail.com","status":"Active","role":"Student"},{"ID":"asd","Fname":"harry","Mname":"leonora","Lname":"asd","Grade":"7","YearSec":"2","Section":"St. Paul","image":"\/user.png","accid":"48","email":"shawnbulos033@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002522323","Fname":"Shawn","Mname":"Rei","Lname":"Bulos","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"49","email":"shawnbulos0333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523233","Fname":"Gol","Mname":"D","Lname":"Roger","Grade":"8","YearSec":"3","Section":"St. John","image":"\/user.png","accid":"52","email":"shawnbulos03333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025223","Fname":"Joseph","Mname":"A","Lname":"Capule","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"62","email":"josephbryan@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-2002512312","Fname":"Shawn","Mname":"leonora","Lname":"teresa","Grade":"7","YearSec":"1","Section":"St. Peter","image":"\/user.png","accid":"63","email":"shawnbulos033333@gmail.com","status":"Inactive","role":"Student"},{"ID":"s2025-20025223323","Fname":"Raizen","Mname":"Rei","Lname":"Raizen","Grade":"8","YearSec":"4","Section":"St. Agnes","image":"\/user.png","accid":"64","email":"shawnbulos0333333@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025","Fname":"Shawn","Mname":"Michael","Lname":"Bulos","Grade":"8","YearSec":"3","Section":"St. John","image":"StudentProfile\/s2025-20025\/img_68edf0a6b53504.78926408.jpg","accid":"37","email":"shawnbulos03@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-2002523","Fname":"Lyndon ","Mname":"leonora","Lname":"cabang","Grade":"10","YearSec":"8","Section":"St. Veronica","image":"\/user.png","accid":"38","email":"sharmainepagadorr@gmail.com","status":"Active","role":"Student"},{"ID":"s2025-20025s","Fname":"Shawn","Mname":"Michael","Lname":"cabang","Grade":"9","YearSec":"5","Section":"St. Therese","image":"\/user.png","accid":"66","email":"sharmainepagador@gmail.com","status":"Inactive","role":"Student"},{"ID":"T001","Fname":"Juan","Mname":"M.","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T001\/img_687e483572d703.99652106.jpg","accid":"1","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T00100","Fname":"Aris Kwong","Mname":"Sheng","Lname":"Diego","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"42","email":"arisdiegosml@gmail.com","status":"Active","role":"Teacher"},{"ID":"T002","Fname":"Maria Selene","Mname":"G.","Lname":"Reyes","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"2","email":"alanbradbalarag@gmail.com","status":"Active","role":"Teacher"},{"ID":"T003","Fname":"Jose","Mname":"L.","Lname":"Santos","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"3","email":"admin1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T004","Fname":"Ana","Mname":"P.","Lname":"Garcia","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"4","email":"shawnbulos03d@gmail.com","status":"Active","role":"Teacher"},{"ID":"T005","Fname":"Pedro","Mname":"B.","Lname":"Lopez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"5","email":"buloss012@gmail.com","status":"Active","role":"Teacher"},{"ID":"T006","Fname":"Luisa","Mname":"R.","Lname":"Mendoza","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"6","email":"ryzen1520@gmail.com","status":"Active","role":"Teacher"},{"ID":"T007","Fname":"Carlos","Mname":"D.","Lname":"Torres","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"7","email":"teacher1@gmail.com","status":"Active","role":"Teacher"},{"ID":"T008","Fname":"Isabel","Mname":"A.","Lname":"Ramos","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T008\/img_68fb0b6eafe952.90730171.jpg","accid":"8","email":"teacher2@gmail.com","status":"Active","role":"Teacher"},{"ID":"T009","Fname":"Ramon","Mname":"F.","Lname":"Cruz","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"9","email":"teacher3@gmail.com","status":"Active","role":"Teacher"},{"ID":"T010","Fname":"Elena","Mname":"C.","Lname":"Bautista","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"10","email":"teacher4@gmail.com","status":"Active","role":"Teacher"},{"ID":"T011","Fname":"Arnold","Mname":"J.","Lname":"Navarro","Grade":null,"YearSec":null,"Section":null,"image":"TeacherProfile\/T011\/img_68fb0b41093400.82802876.jpg","accid":"11","email":"teacher5@gmail.com","status":"Active","role":"Teacher"},{"ID":"T012","Fname":"Lorna","Mname":"E.","Lname":"Domingo","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"12","email":"teacher6@gmail.com","status":"Active","role":"Teacher"},{"ID":"T013","Fname":"Dennis","Mname":"V.","Lname":"Aquino","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"13","email":"teacher7@gmail.com","status":"Active","role":"Teacher"},{"ID":"T014","Fname":"Sheila","Mname":"K.","Lname":"Villanueva","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"14","email":"teacher8@gmail.com","status":"Active","role":"Teacher"},{"ID":"T015","Fname":"Nestor","Mname":"Q.","Lname":"Salvador","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"15","email":"teacher9@gmail.com","status":"Active","role":"Teacher"},{"ID":"T016","Fname":"Jenny","Mname":"Z.","Lname":"Fernandez","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"16","email":"teacher10@gmail.com","status":"Active","role":"Teacher"},{"ID":"T017","Fname":"harry","Mname":"michael","Lname":"rei","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"23","email":"buloss0122@gmail.com","status":"Active","role":"Teacher"},{"ID":"T018","Fname":"tine","Mname":"mendez","Lname":"cabang","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"25","email":"ryzen12312@gmail.com","status":"Active","role":"Teacher"},{"ID":"T19","Fname":"harry","Mname":"asd","Lname":"asd","Grade":null,"YearSec":null,"Section":null,"image":"\/user.png","accid":"28","email":"teacher19@gmail.com","status":"Active","role":"Teacher"},{"ID":"P001","Fname":"Melva","Mname":"C","Lname":"Dela Cruz","Grade":null,"YearSec":null,"Section":null,"image":"","accid":"45","email":"MelbaDelaCruz@gmail.com","status":"Active","role":"Principal"}]
+Request Data: {"action":"getTeacherSubjectMap","schoolYearID":6}
+{"action":"getEvaluationAverageByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+{"action":"getEvaluationCategoryBreakdownByGrade","SchoolYearID":6,"GradeLevel":"All","QID":1}
+0
+{"action":"getHighestCategory","TeacherID":"T011","SchoolYearID":6}
+{"action":"getHighestCategory","TeacherID":"T001","SchoolYearID":6}
