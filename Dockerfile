@@ -1,8 +1,11 @@
-FROM php:8.3-apache
+FROM php:8.3-cli
 
 RUN docker-php-ext-install mysqli
 
+WORKDIR /app
 
-EXPOSE 80
+COPY . /app
 
-CMD ["apache2-foreground"]
+EXPOSE 8080
+
+CMD ["php", "-S", "0.0.0.0:8080", "-t", "/app"]
