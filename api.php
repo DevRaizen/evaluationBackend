@@ -226,7 +226,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } 
             elseif ($usertype === 'Admin') {
                 $stmt2 = $conn->prepare("SELECT a.AdminID, a.Fname, a.Mname, a.Lname, a.AccID, ua.Email, ua.Password
-                         FROM Admin a
+                         FROM admin a
                          JOIN User_Account ua ON a.AccID = ua.AccID
                          WHERE a.AccID = ?");
                         $stmt2->bind_param("i", $accID);
