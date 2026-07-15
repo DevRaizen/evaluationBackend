@@ -7,8 +7,6 @@ header("Access-Control-Allow-Methods: POST");
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Resend\Resend;
-
 try {
 
     $data = json_decode(file_get_contents("php://input"), true);
