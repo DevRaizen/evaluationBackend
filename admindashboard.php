@@ -30,7 +30,7 @@ function getActiveSchoolYearID($conn) {
 
 if(isset($data['action']) && $data['action'] === 'count_students') {
        
-        $stmt = $conn->prepare("SELECT count(*) as count FROM Student s
+        $stmt = $conn->prepare("SELECT count(*) as count FROM student s
                                 inner join user_account ua on ua.AccID = s.AccID 
                                 where ua.status = 1");
         $stmt->execute();
@@ -45,7 +45,7 @@ if(isset($data['action']) && $data['action'] === 'count_students') {
 }
    
 if(isset($data['action']) && $data['action'] === 'count_teachers'){
-    $stmt = $conn->prepare("SELECT count(*) as count from Teacher");
+    $stmt = $conn->prepare("SELECT count(*) as count from teacher");
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_assoc(); 

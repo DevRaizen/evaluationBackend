@@ -27,7 +27,7 @@ function getCurrentSchoolYear(): string {
 
 function getActiveSchoolYearID($conn) {
     $sql = "SELECT SchoolYearID 
-            FROM SchoolYear 
+            FROM schoolyear 
             WHERE Status = 'Active' 
             LIMIT 1";
 
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if StudID exists
     if (isset($data['action']) && $data['action'] == 'check_studid') {
         $studid = $data['studid'] ?? '';
-        $stmt = $conn->prepare("SELECT * FROM Student WHERE StudID = ?");
+        $stmt = $conn->prepare("SELECT * FROM student WHERE StudID = ?");
         $stmt->bind_param("s", $studid);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
     // 1️⃣ Get YearSecID
-    $stmt = $conn->prepare("SELECT YearSecID FROM Year_Section WHERE YearLevel = ? AND SectionName = ?");
+    $stmt = $conn->prepare("SELECT YearSecID FROM year_section WHERE YearLevel = ? AND SectionName = ?");
     $stmt->bind_param("ss", $grade, $section);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -99,20 +99,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $row = $result->fetch_assoc();
         $yearSecID = $row['YearSecID'];
     } else {
-        $insertYearSec = $conn->prepare("INSERT INTO Year_Section (YearLevel, SectionName) VALUES (?, ?)");
+        $insertYearSec = $conn->prepare("INSERT INTO year_section (YearLevel, SectionName) VALUES (?, ?)");
         $insertYearSec->bind_param("ss", $grade, $section);
         $insertYearSec->execute();
         $yearSecID = $conn->insert_id;
     }
 
     // 2️⃣ Insert into User_Account
-    $stmt = $conn->prepare("INSERT INTO User_Account (Email, Password, UserType, Status) VALUES (?, ?, 'Student', 2)");
+    $stmt = $conn->prepare("INSERT INTO user_account (Email, Password, UserType, Status) VALUES (?, ?, 'Student', 2)");
     $stmt->bind_param("ss", $email, $hashedPassword);
     $stmt->execute();
     $accID = $conn->insert_id;
 
     // 3️⃣ Insert into Student table
-    $stmt2 = $conn->prepare("INSERT INTO Student (StudID, AccID, Fname, Mname, Lname) VALUES (?, ?, ?, ?, ?)");
+    $stmt2 = $conn->prepare("INSERT INTO student (StudID, AccID, Fname, Mname, Lname) VALUES (?, ?, ?, ?, ?)");
     $stmt2->bind_param("sisss", $StudId, $accID, $fname, $mname, $lname);
     $success = $stmt2->execute();
 
@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $schoolYearID = $schoolYearRow['SchoolYearID'] ?? 1; // fallback to 1 if not found
 
         // 5️⃣ Insert into Enrollment table with SchoolYearID
-        $enrollStmt = $conn->prepare("INSERT INTO Enrollment (StudID, YearSecID, SchoolYearID) VALUES (?, ?, ?)");
+        $enrollStmt = $conn->prepare("INSERT INTO enrollment (StudID, YearSecID, SchoolYearID) VALUES (?, ?, ?)");
         $enrollStmt->bind_param("sii", $StudId, $yearSecID, $schoolYearID);
         $success2 = $enrollStmt->execute();
 
@@ -323,11 +323,11 @@ if (isset($data['action']) && $data['action'] == 'get_pending_students') {
             ys.YearLevel AS Grade,
             ys.SectionName AS Section,
             sy.SchoolYear
-        FROM User_Account ua
-        INNER JOIN Student s ON ua.AccID = s.AccID
-        LEFT JOIN Enrollment e ON s.StudID = e.StudID
-        LEFT JOIN Year_Section ys ON e.YearSecID = ys.YearSecID
-        inner join SchoolYear sy on e.SchoolYearID = sy.SchoolYearID
+        FROM user_account ua
+        INNER JOIN student s ON ua.AccID = s.AccID
+        LEFT JOIN enrollment e ON s.StudID = e.StudID
+        LEFT JOIN year_section ys ON e.YearSecID = ys.YearSecID
+        inner join schoolyear sy on e.SchoolYearID = sy.SchoolYearID
         WHERE ua.Status = 2 and e.SchoolYearID = ?
     ");
     $stmt->bind_param("i", $schoolYearID);
