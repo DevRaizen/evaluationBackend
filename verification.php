@@ -16,7 +16,7 @@ try {
     $recipient = $data['email'] ?? '';
     $code = $data['code'] ?? '';
 
-    $resend = Resend::client(getenv('re_8fAimhiw_31kCGQhgLzvP8hj3S47vPjoT'));
+    $resend = Resend::client(getenv('RESEND_API_KEY'));
 
     $result = $resend->emails->send([
         'from' => 'onboarding@resend.dev',
