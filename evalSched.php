@@ -15,7 +15,7 @@ error_reporting(E_ALL);
 include 'db.php';
 function getActiveSchoolYearID($conn) {
     $sql = "SELECT SchoolYearID 
-            FROM SchoolYear 
+            FROM schoolyear 
             WHERE Status = 'Active' 
             LIMIT 1";
 
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $checkOverlap = $conn->prepare("
             SELECT COUNT(*) AS cnt 
-            FROM Evaluation_Settings
+            FROM evaluation_settings
             WHERE SchoolYearID = ?
             AND (
                     (StartDate <= ? AND EndDate >= ?)  -- New start inside existing
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validate required fields
     if ($title !== '' && $startDate !== '' && $endDate !== '' && !empty($targetGrades)) {
-        $stmt = $conn->prepare("INSERT INTO Evaluation_Settings (Title, StartDate, EndDate, Status, TargetGrade, SchoolYearID, AdminID, QID)
+        $stmt = $conn->prepare("INSERT INTO evaluation_settings (Title, StartDate, EndDate, Status, TargetGrade, SchoolYearID, AdminID, QID)
                                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("sssssisi", $title, $startDate, $endDate, $status, $targetGradeStr, $schoolYearID, $adminID, $QID);
 
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
      if (isset($data['action']) && $data['action'] === 'getEvaluationSettings') {
 
-        $stmt = $conn->prepare( "SELECT * FROM Evaluation_Settings es inner join schoolyear sy 
+        $stmt = $conn->prepare( "SELECT * FROM evaluation_settings es inner join schoolyear sy 
         on es.SchoolYearID = sy.SchoolYearID
          Where es.Status = 'Active' and sy.Status = 'Active' ORDER BY StartDate DESC");
         $stmt->execute();
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($data['action']) && $data['action'] === 'getEvaluationAllSettings') {
 
-        $stmt = $conn->prepare( "SELECT es.*,sy.SchoolYear FROM Evaluation_Settings es 
+        $stmt = $conn->prepare( "SELECT es.*,sy.SchoolYear FROM evaluation_settings es 
         inner join schoolyear sy on sy.SchoolYearID = es.SchoolYearID
          WHERE es.Status IN ('Active', 'Inactive') ORDER BY StartDate DESC");
         $stmt->execute();
@@ -165,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $checkOverlap = $conn->prepare("
     SELECT COUNT(*) AS cnt
-    FROM Evaluation_Settings
+    FROM evaluation_settings
     WHERE ESetID != ?
     AND (
             (? BETWEEN StartDate AND EndDate)
@@ -194,7 +194,7 @@ if ((int)$overlapResult['cnt'] > 0) {
     exit();
 }
 
-        $stmt = $conn->prepare("UPDATE Evaluation_Settings  SET Title = ?, StartDate = ?, EndDate = ?
+        $stmt = $conn->prepare("UPDATE evaluation_settings  SET Title = ?, StartDate = ?, EndDate = ?
                                  WHERE ESetID = ?");
         $stmt->bind_param("sssi", $title, $startDate, $endDate, $id);
         if ($stmt->execute()) {
@@ -224,7 +224,7 @@ if ((int)$overlapResult['cnt'] > 0) {
 
     if ($result['cnt'] > 0) {
         // Already used → just mark as Deleted
-        $updateStmt = $conn->prepare("UPDATE Evaluation_Settings SET Status = 'Deleted' WHERE ESetID = ?");
+        $updateStmt = $conn->prepare("UPDATE evaluation_settings SET Status = 'Deleted' WHERE ESetID = ?");
         $updateStmt->bind_param("i", $id);
         if ($updateStmt->execute()) {
             echo json_encode([
@@ -240,7 +240,7 @@ if ((int)$overlapResult['cnt'] > 0) {
         $updateStmt->close();
     } else {
         // Not used → safe to delete
-        $deleteStmt = $conn->prepare("DELETE FROM Evaluation_Settings WHERE ESetID = ?");
+        $deleteStmt = $conn->prepare("DELETE FROM evaluation_settings WHERE ESetID = ?");
         $deleteStmt->bind_param("i", $id);
         if ($deleteStmt->execute()) {
             echo json_encode([
