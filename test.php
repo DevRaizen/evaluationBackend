@@ -1,15 +1,4 @@
 <?php
-
-require __DIR__ . '/vendor/autoload.php';
-
-echo "<pre>";
-
-echo "PHP Version: " . PHP_VERSION . "\n\n";
-
-echo "Autoload exists: ";
-echo file_exists(__DIR__ . '/vendor/autoload.php') ? "YES\n" : "NO\n";
-
-echo "\nResend file:\n";
-echo __DIR__ . "/vendor/resend/resend-php/src/Resend.php\n\n";
-
-echo file_get_contents(__DIR__ . "/vendor/resend/resend-php/src/Resend.php");
+echo "upload_max_filesize: " . ini_get('upload_max_filesize') . "<br>";
+echo "post_max_size: " . ini_get('post_max_size') . "<br>";
+echo "memory_limit: " . ini_get('memory_limit') . "<br>";
