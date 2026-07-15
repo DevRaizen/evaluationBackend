@@ -15,7 +15,7 @@ error_reporting(E_ALL);
 include 'db.php'; // Include database connection
 function getActiveSchoolYearID($conn) {
     $sql = "SELECT SchoolYearID 
-            FROM SchoolYear 
+            FROM schoolyear 
             WHERE Status = 'Active' 
             LIMIT 1";
 
