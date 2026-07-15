@@ -9,6 +9,8 @@ FROM php:8.3-cli
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
+COPY php.ini /usr/local/etc/php/conf.d/uploads.ini
+
 WORKDIR /app
 
 COPY . .
