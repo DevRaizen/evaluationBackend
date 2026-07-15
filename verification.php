@@ -31,6 +31,12 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
 
+    $mail->Timeout = 15;
+$mail->SMTPDebug = 2;
+$mail->Debugoutput = function ($str, $level) {
+    error_log($str);
+};
+
     $mail->setFrom('sharmainepagador@gmail.com', 'TeacherEval');
     $mail->addAddress($recipient);
 
