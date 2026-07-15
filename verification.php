@@ -28,8 +28,8 @@ try {
     $mail->SMTPAuth = true;
     $mail->Username = 'sharmainepagador@gmail.com';
     $mail->Password = 'dxch fixs btve myot';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port = 586;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
 
     $mail->Timeout = 15;
 $mail->SMTPDebug = 2;
