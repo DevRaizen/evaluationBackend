@@ -28,8 +28,8 @@ try {
     $mail->SMTPAuth = true;
     $mail->Username = 'sharmainepagador@gmail.com';
     $mail->Password = 'dxch fixs btve myot';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;
 
     $mail->setFrom('sharmainepagador@gmail.com', 'TeacherEval');
     $mail->addAddress($recipient);
