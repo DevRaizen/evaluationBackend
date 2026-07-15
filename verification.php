@@ -24,12 +24,18 @@ try {
 
     // SMTP Config
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
+    $mail->Host = gethostbyname('smtp.gmail.com');
     $mail->SMTPAuth = true;
     $mail->Username = 'sharmainepagador@gmail.com';
     $mail->Password = 'vkwv qoit dhrs hkcq';
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
+
+    $mail->Timeout = 15;
+    $mail->SMTPDebug = 2;
+    $mail->Debugoutput = function ($str, $level) {
+        error_log($str);
+    };
 
     $mail->setFrom('sharmainepagador@gmail.com', 'TeacherEval');
     $mail->addAddress($recipient);
