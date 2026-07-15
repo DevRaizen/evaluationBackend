@@ -1,10 +1,19 @@
+FROM composer:2 AS composer
+
+WORKDIR /app
+
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --optimize-autoloader
+
 FROM php:8.3-cli
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 WORKDIR /app
 
-COPY . /app
+COPY . .
+
+COPY --from=composer /app/vendor ./vendor
 
 EXPOSE 8080
 
