@@ -112,7 +112,7 @@ if (isset($data['action']) && $data['action'] === 'getTop3TeachersByAverage') {
         INNER JOIN result r ON e.EvalID = r.EvalID
         INNER JOIN teacher t ON e.TeacherID = t.TeacherID
         WHERE e.SchoolYearID = ?
-        GROUP BY e.TeacherID, r.CatID
+        GROUP BY e.TeacherID, e.SchoolYearID, t.Fname, t.Lname, t.Image, r.CatID
         ORDER BY e.TeacherID ASC
     ";
 
