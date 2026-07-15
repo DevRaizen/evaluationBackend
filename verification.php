@@ -5,7 +5,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Methods: POST");
 
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 use Resend\Resend;
 
@@ -16,7 +16,7 @@ try {
     $recipient = $data['email'] ?? '';
     $code = $data['code'] ?? '';
 
-    $resend = Resend::client(getenv('RESEND_API_KEY'));
+    $resend = Resend::client(getenv('re_8fAimhiw_31kCGQhgLzvP8hj3S47vPjoT'));
 
     $result = $resend->emails->send([
         'from' => 'onboarding@resend.dev',
