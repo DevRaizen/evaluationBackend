@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = isset($data['password']) ? $data['password'] : '';
     if (isset($data['action']) && $data['action'] == 'check_email') {
     $email = $data['email'] ?? '';
-    $stmt = $conn->prepare("SELECT * FROM User_Account WHERE Email = ?");
+    $stmt = $conn->prepare("SELECT * FROM user_account WHERE Email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
